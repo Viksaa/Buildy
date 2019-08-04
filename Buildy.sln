@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Buildy", "Buildy.csproj", "{265BAA95-F7FA-46A3-A5BC-8CD3864426C1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{265BAA95-F7FA-46A3-A5BC-8CD3864426C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{265BAA95-F7FA-46A3-A5BC-8CD3864426C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{265BAA95-F7FA-46A3-A5BC-8CD3864426C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{265BAA95-F7FA-46A3-A5BC-8CD3864426C1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1E808F8-8DEF-4A03-81E2-AA26A5287F7E}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,13 @@
+# Visual Studio Configuration
+.vs
+
+# SQL Server files
+*.mdf
+*.ldf
+
+# Packages folder
+packages/*
+
+# Bin and Obj
+bin
+obj
