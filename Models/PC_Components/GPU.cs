@@ -22,6 +22,8 @@ namespace Buildy.Models.PC_Components
         public int MemoryClock { get; set; }
         public string Timing { get; set; }
         public int RAMSize { get; set; }
-        public string RAMType { get; set; }
+        public int RAMTypeId { get; set; }
+        [ForeignKey("RAMTypeId")]
+        public RAMMemoryType RamMemoryType { get; set; }
     }
 }

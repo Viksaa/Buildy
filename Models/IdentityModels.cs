@@ -32,6 +32,12 @@ namespace Buildy.Models
         public DbSet<PSU> Psus { get; set; }
         public DbSet<RAM> Rams { get; set; }
         public DbSet<Storage> Storages { get; set; }
+        public DbSet<Socket> Sockets { get; set; }
+        public DbSet<CoolingType> CoolingTypes { get; set; }
+        public DbSet<RAMMemoryType> RamMemoryTypes { get; set; } 
+        public DbSet<Chipset> Chipsets { get; set; } 
+        public DbSet<StorageType> StorageTypes { get; set; }
+        public DbSet<PSUEficency> PsuEficenciess { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

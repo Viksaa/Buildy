@@ -19,7 +19,9 @@ namespace Buildy.Models.PC_Components
         public float Price { get; set; }
         public string ImageURL { get; set; }
         public bool Modular { get; set; }
-        public string Efficiency { get; set; }
+        public int EfficiencyId { get; set; }
+        [ForeignKey(" EfficiencyId")]
+        public PSUEficency PsuEficency { get; set; }
         public int Capacity { get; set; }
     }
 }

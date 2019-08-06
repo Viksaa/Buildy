@@ -18,12 +18,15 @@ namespace Buildy.Models.PC_Components
         public Manufacturer Manufacturer { get; set; }
         public float Price { get; set; }
         public string ImageURL { get; set; }
-        public string Socket { get; set; }
-        public string Chipset { get; set; }
+        public int SocketId { get; set; }
+        [ForeignKey("SocketId")]
+        public Socket Socket { get; set; }
+        public int ChipsetId { get; set; }
+        [ForeignKey("ChipsetId")]
+        public Chipset Chipset { get; set; }
         public int MemorySupport { get; set; }
         public int DimmSlots { get; set; }
         public int MotherboardTypeId { get; set; }
-
         [ForeignKey("MotherboardTypeId")]
         public MotherboardType MotherboardType { get; set; }
     }

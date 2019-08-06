@@ -21,6 +21,9 @@ namespace Buildy.Models.PC_Components
         public int Size { get; set; }
         public bool RGB { get; set; }
         public int Speed { get; set; }
-        public string Type { get; set; }
+
+        public int TypeId { get; set; }
+        [ForeignKey("TypeId")]
+        public CoolingType CoolingType { get; set; }
     }
 }

@@ -22,7 +22,9 @@ namespace Buildy.Models.PC_Components
         public int Threads { get; set; }
         public float Frequency { get; set; }
         public int Cache { get; set; }
-        public string Socket { get; set; }
+        public int SocketId { get; set; }
+        [ForeignKey("SocketId")]
+        public Socket Socket { get; set; }
         public bool CoolingSolution { get; set; }
     }
 }
