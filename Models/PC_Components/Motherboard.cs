@@ -22,6 +22,9 @@ namespace Buildy.Models.PC_Components
         public string Chipset { get; set; }
         public int MemorySupport { get; set; }
         public int DimmSlots { get; set; }
-        public string Type { get; set; }
+        public int MotherboardTypeId { get; set; }
+
+        [ForeignKey("MotherboardTypeId")]
+        public MotherboardType MotherboardType { get; set; }
     }
 }

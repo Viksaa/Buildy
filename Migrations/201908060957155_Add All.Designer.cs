@@ -7,13 +7,13 @@ namespace Buildy.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class AddedAllModelstoDB : IMigrationMetadata
+    public sealed partial class AddAll : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedAllModelstoDB));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddAll));
         
         string IMigrationMetadata.Id
         {
-            get { return "201908060930431_Added All Models to DB"; }
+            get { return "201908060957155_Add All"; }
         }
         
         string IMigrationMetadata.Source

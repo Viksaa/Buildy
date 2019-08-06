@@ -23,7 +23,16 @@ namespace Buildy.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<MotherboardType> MotherboardTypes { get; set; }
         public DbSet<Case> Cases { get; set; }
+        public DbSet<GPU> Gpus { get; set; }
+        public DbSet<CPU> Cpus { get; set; }
+        public DbSet<Cooling> Coolings { get; set; }
+        public DbSet<Motherboard> Motherboards { get; set; }
+        public DbSet<PSU> Psus { get; set; }
+        public DbSet<RAM> Rams { get; set; }
+        public DbSet<Storage> Storages { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

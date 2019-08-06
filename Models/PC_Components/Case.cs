@@ -22,7 +22,10 @@ namespace Buildy.Models.PC_Components
         public float Price { get; set; }
         public string ImageURL { get; set; }
         public string Dimensions { get; set; }
-        public string MotherboardType { get; set; }
+        public int MotherboardTypeId { get; set; }
+
+        [ForeignKey("MotherboardTypeId")]
+        public MotherboardType MotherboardType { get; set; }
         public int FanSupport { get; set; }
     }
 }

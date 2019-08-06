@@ -177,13 +177,9 @@
     <Compile Include="Migrations\201908060901308_Initial.Designer.cs">
       <DependentUpon>201908060901308_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201908060916535_Added Case and Manufacturer to table.cs" />
-    <Compile Include="Migrations\201908060916535_Added Case and Manufacturer to table.Designer.cs">
-      <DependentUpon>201908060916535_Added Case and Manufacturer to table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201908060930431_Added All Models to DB.cs" />
-    <Compile Include="Migrations\201908060930431_Added All Models to DB.Designer.cs">
-      <DependentUpon>201908060930431_Added All Models to DB.cs</DependentUpon>
+    <Compile Include="Migrations\201908060957155_Add All.cs" />
+    <Compile Include="Migrations\201908060957155_Add All.Designer.cs">
+      <DependentUpon>201908060957155_Add All.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -195,6 +191,7 @@
     <Compile Include="Models\PC_Components\GPU.cs" />
     <Compile Include="Models\PC_Components\Motherboard.cs" />
     <Compile Include="Models\PC_Components\PC_Helper_Models\Manufacturer.cs" />
+    <Compile Include="Models\PC_Components\PC_Helper_Models\MotherboardType.cs" />
     <Compile Include="Models\PC_Components\PSU.cs" />
     <Compile Include="Models\PC_Components\RAM.cs" />
     <Compile Include="Models\PC_Components\Storage.cs" />
@@ -278,11 +275,8 @@
     <EmbeddedResource Include="Migrations\201908060901308_Initial.resx">
       <DependentUpon>201908060901308_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908060916535_Added Case and Manufacturer to table.resx">
-      <DependentUpon>201908060916535_Added Case and Manufacturer to table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201908060930431_Added All Models to DB.resx">
-      <DependentUpon>201908060930431_Added All Models to DB.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201908060957155_Add All.resx">
+      <DependentUpon>201908060957155_Add All.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
