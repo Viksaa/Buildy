@@ -38,6 +38,7 @@ namespace Buildy.Models
         public DbSet<Chipset> Chipsets { get; set; } 
         public DbSet<StorageType> StorageTypes { get; set; }
         public DbSet<PSUEficency> PsuEficenciess { get; set; }
+        public DbSet<Computer> Computers { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

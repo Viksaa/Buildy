@@ -21,8 +21,8 @@ namespace Buildy.Migrations
                         FanSupport = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
-                .ForeignKey("dbo.MotherboardTypes", t => t.MotherboardTypeId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
+                .ForeignKey("dbo.MotherboardTypes", t => t.MotherboardTypeId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId)
                 .Index(t => t.MotherboardTypeId);
             
@@ -51,7 +51,7 @@ namespace Buildy.Migrations
                         Type = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId);
             
             CreateTable(
@@ -71,7 +71,7 @@ namespace Buildy.Migrations
                         CoolingSolution = c.Boolean(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId);
             
             CreateTable(
@@ -90,7 +90,7 @@ namespace Buildy.Migrations
                         RAMType = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId);
             
             CreateTable(
@@ -109,8 +109,8 @@ namespace Buildy.Migrations
                         MotherboardTypeId = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
-                .ForeignKey("dbo.MotherboardTypes", t => t.MotherboardTypeId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
+                .ForeignKey("dbo.MotherboardTypes", t => t.MotherboardTypeId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId)
                 .Index(t => t.MotherboardTypeId);
             
@@ -137,7 +137,7 @@ namespace Buildy.Migrations
                         Capacity = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId);
             
             CreateTable(
@@ -155,7 +155,7 @@ namespace Buildy.Migrations
                         WritingSpeed = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId);
             
             CreateTable(
@@ -173,7 +173,7 @@ namespace Buildy.Migrations
                         Timing = c.String(),
                     })
                 .PrimaryKey(t => t.Id)
-                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: true)
+                .ForeignKey("dbo.Manufacturers", t => t.ManufacturerId, cascadeDelete: false)
                 .Index(t => t.ManufacturerId);
             
         }

@@ -18,7 +18,7 @@ namespace Buildy.Migrations
             
             AddColumn("dbo.RAMs", "MemoryTypeId", c => c.Int(nullable: false));
             CreateIndex("dbo.RAMs", "MemoryTypeId");
-            AddForeignKey("dbo.RAMs", "MemoryTypeId", "dbo.RamMemoryTypes", "Id", cascadeDelete: true);
+            AddForeignKey("dbo.RAMs", "MemoryTypeId", "dbo.RamMemoryTypes", "Id", cascadeDelete: false);
             DropColumn("dbo.RAMs", "MemoryType");
         }
         

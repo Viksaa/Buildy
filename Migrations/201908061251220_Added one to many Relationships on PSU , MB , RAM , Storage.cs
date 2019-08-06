@@ -42,10 +42,10 @@ namespace Buildy.Migrations
             CreateIndex("dbo.Motherboards", "ChipsetId");
             CreateIndex("dbo.PSUs", "EfficiencyId");
             CreateIndex("dbo.Storages", "TypeId");
-            AddForeignKey("dbo.Motherboards", "ChipsetId", "dbo.Chipsets", "Id", cascadeDelete: true);
-            AddForeignKey("dbo.Motherboards", "SocketId", "dbo.Sockets", "Id", cascadeDelete: true);
-            AddForeignKey("dbo.PSUs", "EfficiencyId", "dbo.PsuEficencies", "Id", cascadeDelete: true);
-            AddForeignKey("dbo.Storages", "TypeId", "dbo.StorageTypes", "Id", cascadeDelete: true);
+            AddForeignKey("dbo.Motherboards", "ChipsetId", "dbo.Chipsets", "Id", cascadeDelete: false);
+            AddForeignKey("dbo.Motherboards", "SocketId", "dbo.Sockets", "Id", cascadeDelete: false);
+            AddForeignKey("dbo.PSUs", "EfficiencyId", "dbo.PsuEficencies", "Id", cascadeDelete: false);
+            AddForeignKey("dbo.Storages", "TypeId", "dbo.StorageTypes", "Id", cascadeDelete: false);
             DropColumn("dbo.Motherboards", "Socket");
             DropColumn("dbo.Motherboards", "Chipset");
             DropColumn("dbo.PSUs", "Efficiency");

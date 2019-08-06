@@ -31,9 +31,9 @@ namespace Buildy.Migrations
             CreateIndex("dbo.Coolings", "TypeId");
             CreateIndex("dbo.CPUs", "SocketId");
             CreateIndex("dbo.GPUs", "RAMTypeId");
-            AddForeignKey("dbo.Coolings", "TypeId", "dbo.CoolingTypes", "Id", cascadeDelete: true);
-            AddForeignKey("dbo.CPUs", "SocketId", "dbo.Sockets", "Id", cascadeDelete: true);
-            AddForeignKey("dbo.GPUs", "RAMTypeId", "dbo.RamMemoryTypes", "Id", cascadeDelete: true);
+            AddForeignKey("dbo.Coolings", "TypeId", "dbo.CoolingTypes", "Id", cascadeDelete: false);
+            AddForeignKey("dbo.CPUs", "SocketId", "dbo.Sockets", "Id", cascadeDelete: false);
+            AddForeignKey("dbo.GPUs", "RAMTypeId", "dbo.RamMemoryTypes", "Id", cascadeDelete: false);
             DropColumn("dbo.Coolings", "Type");
             DropColumn("dbo.CPUs", "Socket");
             DropColumn("dbo.GPUs", "RAMType");
