@@ -1,6 +1,8 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Buildy.Models.PC_Components;
+using Buildy.Models.PC_Components.PC_Helper_Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -20,6 +22,8 @@ namespace Buildy.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Case> Cases { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
