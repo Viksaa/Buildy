@@ -209,6 +209,10 @@
     <Compile Include="Migrations\201908252209265_UpdatedUserModel.Designer.cs">
       <DependentUpon>201908252209265_UpdatedUserModel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908252237273_UpdatedUserModel1.cs" />
+    <Compile Include="Migrations\201908252237273_UpdatedUserModel1.Designer.cs">
+      <DependentUpon>201908252237273_UpdatedUserModel1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -334,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908252209265_UpdatedUserModel.resx">
       <DependentUpon>201908252209265_UpdatedUserModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908252237273_UpdatedUserModel1.resx">
+      <DependentUpon>201908252237273_UpdatedUserModel1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

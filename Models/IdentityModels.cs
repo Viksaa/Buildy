@@ -17,7 +17,6 @@ namespace Buildy.Models
         public int AddressId { get; set; }
         [ForeignKey("AddressId")]
         public Address Address { get; set; }
-        public int Age { get; set; }
         public bool Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
