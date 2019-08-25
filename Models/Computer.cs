@@ -18,6 +18,7 @@ namespace Buildy.Models
         public int CoolingId { get; set; }
         [ForeignKey("CoolingId")]
         public Cooling Cooling { get; set; }
+        public int CoolingAmmount { get; set; }
         public int CpuId { get; set; }
         [ForeignKey("CpuId")]
         public CPU Cpu { get; set; }
@@ -33,8 +34,11 @@ namespace Buildy.Models
         public int RamId { get; set; }
         [ForeignKey("RamId")]
         public RAM Ram { get; set; }
+        public int RamAmmount { get; set; }
         public int StorageId { get; set; }
         [ForeignKey("StorageId")]
         public Storage Storage { get; set; }
+        public int StorageAmmount { get; set; }
+
     }
 }

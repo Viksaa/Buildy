@@ -201,8 +201,17 @@
     <Compile Include="Migrations\201908061312151_Added Computer Table.Designer.cs">
       <DependentUpon>201908061312151_Added Computer Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201908252110037_UpadteComputerModel.cs" />
+    <Compile Include="Migrations\201908252110037_UpadteComputerModel.Designer.cs">
+      <DependentUpon>201908252110037_UpadteComputerModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201908252209265_UpdatedUserModel.cs" />
+    <Compile Include="Migrations\201908252209265_UpdatedUserModel.Designer.cs">
+      <DependentUpon>201908252209265_UpdatedUserModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Address.cs" />
     <Compile Include="Models\Computer.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -319,6 +328,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201908061312151_Added Computer Table.resx">
       <DependentUpon>201908061312151_Added Computer Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908252110037_UpadteComputerModel.resx">
+      <DependentUpon>201908252110037_UpadteComputerModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201908252209265_UpdatedUserModel.resx">
+      <DependentUpon>201908252209265_UpdatedUserModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
