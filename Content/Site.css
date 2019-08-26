@@ -2,7 +2,6 @@
 
 body {
     padding-top: 50px;
-    padding-bottom: 20px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -27,9 +26,12 @@ textarea {
 }
 
 :root {
+    /*--main-menu-color: #233140;*/
+    /*--secondary-menu-color: #354a61;*/
     --main-menu-color: #294272;
     --secondary-menu-color: #365898;
     --main-menu-text-shadows: 1px 1px 2px #000000;
+    --footer-color: #2a2a2a;
 }
 
 .custom-navbar {
@@ -61,7 +63,7 @@ textarea {
 .custom-navbar .navbar-nav > li > a:hover,
 .custom-navbar .navbar-nav > li > a:focus {
     color: #c0c0c0;
-    background-color: transparent;
+    background-color: #2e4a7f;
 }
 
 .active-menu {
@@ -77,6 +79,40 @@ textarea {
 
 .icon-bar {
     background-color: #fff;
+}
+
+.header-logo {
+    cursor: pointer;
+    max-height: 51px;
+    margin: 0 50px 0 15px;
+}
+
+footer {
+    background-color: var(--footer-color);
+    width: 100%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    margin-top: 20px;
+    position: relative;
+}
+
+footer > p {
+    margin: 0 !important;
+}
+
+footer > a {
+    position: absolute;
+    right: 5%;
+}
+
+.footer-logo {
+    cursor: pointer;
+    max-height: 50px;
+    height: calc(5px + 10vw);
 }
 
 @media only screen and (max-width: 768px) {
