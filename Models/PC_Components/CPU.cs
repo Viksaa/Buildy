@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -17,6 +18,7 @@ namespace Buildy.Models.PC_Components
         [ForeignKey("ManufacturerId")]
         public Manufacturer Manufacturer { get; set; }
         public float Price { get; set; }
+        [DisplayName("Image")]
         public string ImageURL { get; set; }
         public int Cores { get; set; }
         public int Threads { get; set; }

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Buildy.Models.Computer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Case.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cooling.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpu.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gpu.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Motherboard.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Psu.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ram.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Storage.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CoolingAmmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RamAmmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StorageAmmount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Case.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cooling.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cpu.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gpu.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Motherboard.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Psu.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ram.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Storage.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CoolingAmmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RamAmmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StorageAmmount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

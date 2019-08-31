@@ -24,7 +24,15 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active-menu" : "")">@Html.ActionLink("What is Buildy?", "Index", "Home")</li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active-menu" : "")">
+                        @*<img src="~/Resources/business-card-of-a-man-with-contact-info.svg" width="50" height="50"/>
+                        @Html.ActionLink("What is Buildy?", "Index", "Home")*@
+                        <a href="@Url.Action("Index", "Home")">
+                            <img src="~/Resources/business-card-of-a-man-with-contact-info.svg" alt="logo"/>
+                            What is Buildy?
+                        </a>
+                    </li>
+                    <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active-menu" : "")">@Html.ActionLink("Build a PC", "Create", "Computers")</li>
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active-menu" : "")">@Html.ActionLink("Contact", "About", "Home")</li>
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active-menu" : "")">@Html.ActionLink("FAQ", "Contact", "Home")</li>
                 </ul>
@@ -43,8 +51,7 @@
             <img class="footer-logo" src="~/Resources/BuildyLogoWhite.png" alt="LOGO"/>
         </a>
     </footer>
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+@Scripts.Render("~/bundles/jquery")
+@RenderSection("scripts", required: false)
 </body>
 </html>
