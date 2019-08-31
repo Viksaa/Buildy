@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.AccessControl;
@@ -12,6 +13,7 @@ namespace Buildy.Models.PC_Components.PC_Helper_Models
         [Key]
         public int Id { get; set; }
 
+        [DisplayName("Socket Name")]
         public string Name { get; set; }
 
         public ICollection<CPU> Cpus { get; set; }

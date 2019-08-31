@@ -165,6 +165,13 @@ namespace Buildy.Controllers
           return RedirectToAction("Create");
         }
 
+        public ActionResult RemoveCpu()
+        {
+            Session["Cpu"] = null;
+            return RedirectToAction("Create");
+        }
+
+
 
 
         //public async Task<ActionResult> AddCpuAsync()

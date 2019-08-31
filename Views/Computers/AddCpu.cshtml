@@ -10,17 +10,16 @@
 <table class="table" id="CPU">
     <thead>
         <tr>
-            <th>
-                Image
+            <th class="no-sort">
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                Manufacturer Name
+                @Html.DisplayNameFor(model => model.Manufacturer)
             </th>
             <th>
-                Socket Name
+                @Html.DisplayNameFor(model => model.Socket)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -37,10 +36,10 @@
             <th>
                 @Html.DisplayNameFor(model => model.Cache)
             </th>
-            <th>
+            <th class="no-sort">
                 @Html.DisplayNameFor(model => model.CoolingSolution)
             </th>
-            <th></th>
+            <th class="no-sort"></th>
         </tr>
     </thead>
     <tbody>@foreach (var item in Model)
@@ -60,7 +59,7 @@
             </td>
 
             <td>
-                @Html.DisplayFor(modelItem => item.Price)
+                $@Html.DisplayFor(modelItem => item.Price)
             </td>
 
             <td>
@@ -70,13 +69,13 @@
                 @Html.DisplayFor(modelItem => item.Threads)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Frequency)
+                @Html.DisplayFor(modelItem => item.Frequency) GHz
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Cache)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CoolingSolution)
+                <i class="glyphicon @(item.CoolingSolution ? "glyphicon-check" : "glyphicon-unchecked")"></i>
             </td>
             <td>
                 @Html.ActionLink("Add", "AddCpuToPc", new { id = item.Id} , new {@class="btn btn-success"})
@@ -93,7 +92,13 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            $("#CPU").dataTable();
+            $("#CPU").dataTable({
+                "order": [],
+                "columnDefs": [ {
+                    "targets": 'no-sort',
+                    "orderable": false,
+                } ]
+            });
         });
     </script>
 }

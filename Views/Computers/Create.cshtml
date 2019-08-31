@@ -31,14 +31,14 @@
             <a href="/computers">@cpu</a>
         </td>
         <td>
-            @Html.ActionLink("Add", "AddCpu", "Computers", new {@class = "btn btn-success"})
+            @Html.ActionLink("Add", "AddCpu", "Computers", new { @class = "btn btn-success" })
             @{
                 if (cpu != "")
                 {
-                    <button  class="btn btn-danger">Remove</button>
+                    @Html.ActionLink("Remove", "RemoveCpu", "Computers", new { @class = "btn btn-danger" })
                 }
             }
-            </td>
+        </td>
     </tr>
     <tr>
         <td>Motherboard</td>
@@ -80,7 +80,3 @@
     </tr>
     </tbody>
 </table>
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
