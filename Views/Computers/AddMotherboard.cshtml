@@ -1,0 +1,92 @@
+﻿@model IEnumerable<Buildy.Models.PC_Components.Motherboard>
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+<table class="table" id="MB">
+    <thead>
+        <tr>
+            <th class="no-sort">
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MotherboardType.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Socket)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemorySupport)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DimmSlots)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th class="no-sort"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@item.ImageURL" width="100" height="50">
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Manufacturer.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MotherboardType.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Socket.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MemorySupport)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DimmSlots)
+                </td>
+                <td>
+                    $@Html.DisplayFor(modelItem => item.Price)
+                </td>
+                <td>
+                    @Html.ActionLink("Add", "AddMotherboardToPc", new { id = item.Id }, new { @class = "btn btn-success" })
+                </td>
+            </tr>
+        }
+</tbody>
+
+</table>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $("#MB").dataTable({
+                "order": [],
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false
+                }]
+            });
+        });
+    </script>
+}
+

@@ -12,17 +12,28 @@ namespace Buildy.Models.PC_Components
     {
         [Key]
         public int Id { get; set; }
+
         public string Name { get; set; }
+
         public int ManufacturerId { get; set; }
+
         [ForeignKey("ManufacturerId")]
         public Manufacturer Manufacturer { get; set; }
+
         public float Price { get; set; }
+
         public string ImageURL { get; set; }
+
         public int Frequency { get; set; }
+
         public int MemoryClock { get; set; }
+
         public string Timing { get; set; }
+
         public int RAMSize { get; set; }
+
         public int RAMTypeId { get; set; }
+
         [ForeignKey("RAMTypeId")]
         public RAMMemoryType RamMemoryType { get; set; }
     }

@@ -12,17 +12,26 @@ namespace Buildy.Models.PC_Components
     {
         [Key]
         public int Id { get; set; }
+
         public string Name { get; set; }
+
         public int ManufacturerId { get; set; }
+
         [ForeignKey("ManufacturerId")]
         public Manufacturer Manufacturer { get; set; }
+
         public float Price { get; set; }
+
         public string ImageURL { get; set; }
+
         public int Size { get; set; }
+
         public bool RGB { get; set; }
+
         public int Speed { get; set; }
 
         public int TypeId { get; set; }
+
         [ForeignKey("TypeId")]
         public CoolingType CoolingType { get; set; }
     }

@@ -151,18 +151,22 @@ namespace Buildy.Controllers
             base.Dispose(disposing);
         }
 
-        public ActionResult AddCpu()
+        public async Task<ActionResult> AddCpu()
         {
-            var dbCpu =  db.Cpus.Include(p=>p.Manufacturer)
-                .Include(p=>p.Socket);
-            return View("AddCpu",dbCpu);
+            var dbCpu = await db.Cpus
+                .Include(c => c.Manufacturer)
+                .Include(c => c.Socket)
+                .ToListAsync();
+
+            return View("AddCpu", dbCpu);
         }
 
-        public ActionResult AddCpuToPc(int id)
+        public async Task<ActionResult> AddCpuToPc(int id)
         {
-            var dbCpu = db.Cpus.Find(id);
-            Session["Cpu"]= dbCpu;
-          return RedirectToAction("Create");
+            var dbCpu = await db.Cpus.FindAsync(id);
+            Session["Cpu"] = dbCpu;
+
+            return RedirectToAction("Create");
         }
 
         public ActionResult RemoveCpu()
@@ -171,15 +175,30 @@ namespace Buildy.Controllers
             return RedirectToAction("Create");
         }
 
+        public async Task<ActionResult> AddMotherboard()
+        {
+            var dbMb = await db.Motherboards
+                .Include(mb => mb.Manufacturer)
+                .Include(mb => mb.Socket)
+                .Include(mb => mb.Chipset)
+                .Include(mb => mb.MotherboardType)
+                .ToListAsync();
 
+            return View("AddMotherboard", dbMb);
+        }
 
+        public async Task<ActionResult> AddMotherboardToPc(int id)
+        {
+            var dbMb = await db.Motherboards.FindAsync(id);
+            Session["Mb"] = dbMb;
 
-        //public async Task<ActionResult> AddCpuAsync()
-        //{
-        //    var dbCpu = await db.Cpus.Include(p => p.Manufacturer)
-        //        .Include(p => p.Socket).ToListAsync();
+            return RedirectToAction("Create");
+        }
 
-        //    return View("AddCpu", dbCpu);
-        //}
+        public ActionResult RemoveMotherboard()
+        {
+            Session["Mb"] = null;
+            return RedirectToAction("Create");
+        }
     }
 }

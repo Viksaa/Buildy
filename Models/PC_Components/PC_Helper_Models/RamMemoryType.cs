@@ -10,8 +10,11 @@ namespace Buildy.Models.PC_Components.PC_Helper_Models
     {
         [Key]
         public int Id { get; set; }
+
         public string Name { get; set; }
+
         public ICollection<RAM> Rams { get; set; }
+
         public ICollection<GPU> Gpus { get; set; }
     }
 }

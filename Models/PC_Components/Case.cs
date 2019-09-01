@@ -16,16 +16,21 @@ namespace Buildy.Models.PC_Components
         public string Name { get; set; }
 
         public int ManufacturerId { get; set; }
+
         [ForeignKey("ManufacturerId")]
         public Manufacturer Manufacturer { get; set; }
 
         public float Price { get; set; }
+
         public string ImageURL { get; set; }
+
         public string Dimensions { get; set; }
+
         public int MotherboardTypeId { get; set; }
 
         [ForeignKey("MotherboardTypeId")]
         public MotherboardType MotherboardType { get; set; }
+
         public int FanSupport { get; set; }
     }
 }

@@ -22,9 +22,6 @@
                 @Html.DisplayNameFor(model => model.Socket)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Cores)
             </th>
             <th>
@@ -36,8 +33,11 @@
             <th>
                 @Html.DisplayNameFor(model => model.Cache)
             </th>
-            <th class="no-sort">
+            <th  class="no-sort">
                 @Html.DisplayNameFor(model => model.CoolingSolution)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
             </th>
             <th class="no-sort"></th>
         </tr>
@@ -57,11 +57,6 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Socket.Name)
             </td>
-
-            <td>
-                $@Html.DisplayFor(modelItem => item.Price)
-            </td>
-
             <td>
                 @Html.DisplayFor(modelItem => item.Cores)
             </td>
@@ -78,7 +73,10 @@
                 <i class="glyphicon @(item.CoolingSolution ? "glyphicon-check" : "glyphicon-unchecked")"></i>
             </td>
             <td>
-                @Html.ActionLink("Add", "AddCpuToPc", new { id = item.Id} , new {@class="btn btn-success"})
+                $@Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Add", "AddCpuToPc", new { id = item.Id }, new { @class = "btn btn-success" })
             </td>
         </tr>
            }
@@ -96,7 +94,7 @@
                 "order": [],
                 "columnDefs": [ {
                     "targets": 'no-sort',
-                    "orderable": false,
+                    "orderable": false
                 } ]
             });
         });
