@@ -3,7 +3,7 @@ namespace Buildy.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class NameRefactor : DbMigration
+    public partial class TestSeeder : DbMigration
     {
         public override void Up()
         {
@@ -12,6 +12,5 @@ namespace Buildy.Migrations
         public override void Down()
         {
         }
-
     }
 }
