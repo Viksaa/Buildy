@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Buildy.Models;
+using Buildy.Models.PC_Components.PC_Helper_Models;
 
 namespace Buildy.Controllers
 {
@@ -17,6 +18,7 @@ namespace Buildy.Controllers
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
+        private ApplicationDbContext dbContext = new ApplicationDbContext();
 
         public AccountController()
         {
@@ -151,7 +153,7 @@ namespace Buildy.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.UserName, Email = model.Email , DateOfBirth = model.DateOfBirth , Gender = model.Gender };
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -417,6 +419,10 @@ namespace Buildy.Controllers
                 {
                     _signInManager.Dispose();
                     _signInManager = null;
+                }
+                if(dbContext == null)
+                {
+                    dbContext = null;
                 }
             }
 

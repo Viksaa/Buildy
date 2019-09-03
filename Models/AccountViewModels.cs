@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Buildy.Models
@@ -64,10 +65,25 @@ namespace Buildy.Models
 
     public class RegisterViewModel
     {
+  
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
+
+        [Required]
+        [Display(Name = "Gender")]
+        public bool Gender { get; set; }
+
+        [Required]
+        [Display(Name = "User name")]
+        public  string UserName { get; set; }
+
+        [Required]
+        [Display(Name = "Date of birth")]
+        public DateTime DateOfBirth { get; set; }
+
+        public Address Address { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
