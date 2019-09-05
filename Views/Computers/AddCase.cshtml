@@ -1,13 +1,14 @@
-﻿@model IEnumerable<Buildy.Models.PC_Components.Motherboard>
+﻿@model IEnumerable<Buildy.Models.PC_Components.Case>
 
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "AddCase";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>View</h2>
+<h2>AddCase</h2>
 
-<table class="table" id="MB">
+
+<table class="table" id="Case">
     <thead>
         <tr>
             <th class="no-sort">
@@ -20,16 +21,13 @@
                 @Html.DisplayNameFor(model => model.Manufacturer)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Dimensions)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FanSupport)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.MotherboardType.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Socket)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MemorySupport)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DimmSlots)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -51,26 +49,23 @@
                     @Html.DisplayFor(modelItem => item.Manufacturer.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MotherboardType.Name)
+                    @Html.DisplayFor(modelItem => item.Dimensions)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Socket.Name)
+                    @Html.DisplayFor(modelItem => item.FanSupport)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.MemorySupport)
+                    @Html.DisplayFor(model => item.MotherboardType.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.DimmSlots)
+                    @Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    $@Html.DisplayFor(modelItem => item.Price)
-                </td>
-                <td>
-                    @Html.ActionLink("Add", "AddMotherboardToPc", new { id = item.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Add", "AddCaseToPc", new { id = item.Id }, new { @class = "btn btn-success" })
                 </td>
             </tr>
         }
-</tbody>
+    </tbody>
 
 </table>
 
@@ -80,7 +75,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            $("#MB").dataTable({
+            $("#Case").dataTable({
                 "order": [],
                 "columnDefs": [{
                     "targets": 'no-sort',

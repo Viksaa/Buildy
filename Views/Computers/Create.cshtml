@@ -78,9 +78,19 @@
         </tr>
         <tr>
             <td>Case</td>
-            <td></td>
             <td>
-                @Html.ActionLink("Add", "AddCpu", "Computers", new { @class = "btn btn-success" })</
+                @{
+                    var Case = "";
+                    if (Session["Case"] != null)
+                    {
+                        var tmp = (Case)Session["Case"];
+                        Case = tmp.Name;
+                    }
+                    <a href="/computers">@Case</a>
+                }
+            </td>
+            <td>
+                @Html.ActionLink("Add", "AddCase", "Computers", new { @class = "btn btn-success" })</
             </td>
         </tr>
         <tr>

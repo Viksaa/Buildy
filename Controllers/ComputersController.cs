@@ -200,5 +200,29 @@ namespace Buildy.Controllers
             Session["Mb"] = null;
             return RedirectToAction("Create");
         }
+
+        public async Task<ActionResult> AddCase()
+        {
+            var dbCase = await db.Cases
+                .Include(mb => mb.Manufacturer)
+                .Include(mb => mb.MotherboardType)
+                .ToListAsync();
+
+            return View("AddCase", dbCase);
+        }
+
+        public async Task<ActionResult> AddCaseToPc(int id)
+        {
+            var dbCase = await db.Cases.FindAsync(id);
+            Session["Case"] = dbCase;
+
+            return RedirectToAction("Create");
+        }
+
+        public ActionResult RemoveCase()
+        {
+            Session["Case"] = null;
+            return RedirectToAction("Create");
+        }
     }
 }
