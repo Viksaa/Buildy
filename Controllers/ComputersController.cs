@@ -163,7 +163,7 @@ namespace Buildy.Controllers
 
         public async Task<ActionResult> AddCpuToPc(int id)
         {
-            var dbCpu = await db.Cpus.FindAsync(id);
+            var dbCpu = await db.Cpus.Include(mb => mb.Manufacturer).Where(mb => mb.Id == id).FirstAsync();
             Session["Cpu"] = dbCpu;
 
             return RedirectToAction("Create");
@@ -189,7 +189,7 @@ namespace Buildy.Controllers
 
         public async Task<ActionResult> AddMotherboardToPc(int id)
         {
-            var dbMb = await db.Motherboards.FindAsync(id);
+            var dbMb = await db.Motherboards.Include(mb => mb.Manufacturer).Where(mb => mb.Id == id).FirstAsync();
             Session["Mb"] = dbMb;
 
             return RedirectToAction("Create");
@@ -213,7 +213,7 @@ namespace Buildy.Controllers
 
         public async Task<ActionResult> AddCaseToPc(int id)
         {
-            var dbCase = await db.Cases.FindAsync(id);
+            var dbCase = await db.Cases.Include(mb => mb.Manufacturer).Where(mb => mb.Id == id).FirstAsync();
             Session["Case"] = dbCase;
 
             return RedirectToAction("Create");
@@ -222,6 +222,30 @@ namespace Buildy.Controllers
         public ActionResult RemoveCase()
         {
             Session["Case"] = null;
+            return RedirectToAction("Create");
+        }
+
+        public async Task<ActionResult> AddGpu()
+        {
+            var dbGpu = await db.Gpus
+                .Include(mb => mb.Manufacturer)
+                .Include(mb => mb.RamMemoryType)
+                .ToListAsync();
+
+            return View("AddGpu", dbGpu);
+        }
+
+        public async Task<ActionResult> AddGpuToPc(int id)
+        {
+            var dbGpu = await db.Gpus.Include(mb=> mb.Manufacturer).Where(mb=> mb.Id == id).FirstAsync();
+            Session["Gpu"] = dbGpu;
+
+            return RedirectToAction("Create");
+        }
+
+        public ActionResult RemoveGpu()
+        {
+            Session["Gpu"] = null;
             return RedirectToAction("Create");
         }
     }

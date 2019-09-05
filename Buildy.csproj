@@ -544,6 +544,7 @@
     <Content Include="Views\Computers\AddCpu.cshtml" />
     <Content Include="Views\Computers\AddMotherboard.cshtml" />
     <Content Include="Views\Computers\AddCase.cshtml" />
+    <Content Include="Views\Computers\AddGpu.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
