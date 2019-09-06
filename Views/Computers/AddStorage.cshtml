@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Buildy.Models.PC_Components.Storage>
+
+@{
+    ViewBag.Title = "AddStorage";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+
+<table class="table" id="Storage">
+    <thead>
+        <tr>
+            <th class="no-sort">
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Manufacturer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StorageType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Capacity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadingSpeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WritingSpeed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+            <th class="no-sort"></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                <img src="@item.ImageURL" width="100" height="50">
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Manufacturer.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StorageType.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Capacity) Gb
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.ReadingSpeed) Mb/s
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.WritingSpeed) Mb/s
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.ActionLink("Add", "AddStorageToPc", new { id = item.Id }, new { @class = "btn btn-success" })
+            </td>
+        </tr>
+        }
+    </tbody>
+
+</table>
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $("#Storage").dataTable({
+                "order": [],
+                "columnDefs": [{
+                    "targets": 'no-sort',
+                    "orderable": false
+                }]
+            });
+        });
+    </script>
+}

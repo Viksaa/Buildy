@@ -296,5 +296,29 @@ namespace Buildy.Controllers
             Session["Ram"] = null;
             return RedirectToAction("Create");
         }
+
+        public async Task<ActionResult> AddStorage()
+        {
+            var dbStorage = await db.Storages
+                .Include(mb => mb.Manufacturer)
+                .Include(mb => mb.StorageType)
+                .ToListAsync();
+
+            return View("AddStorage", dbStorage);
+        }
+
+        public async Task<ActionResult> AddStorageToPc(int id)
+        {
+            var dbStorage = await db.Storages.Include(mb => mb.Manufacturer).Where(mb => mb.Id == id).FirstAsync();
+            Session["Storage"] = dbStorage;
+
+            return RedirectToAction("Create");
+        }
+
+        public ActionResult RemoveStorage()
+        {
+            Session["Storage"] = null;
+            return RedirectToAction("Create");
+        }
     }
 }
