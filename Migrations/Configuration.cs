@@ -84,7 +84,7 @@ namespace Buildy.Migrations
 
             context.CoolingTypes.AddOrUpdate(x => x.Id,
                 new CoolingType() {Id = 1, Name = "Liquid" },
-                new CoolingType() { Id = 1, Name = "Air" }
+                new CoolingType() { Id = 2, Name = "Air" }
                 );
 
             context.Cpus.AddOrUpdate(x => x.Id,
@@ -129,10 +129,26 @@ namespace Buildy.Migrations
 
             context.Rams.AddOrUpdate(x => x.Id,
                 new RAM() { Id = 1 , Name = "Vengeance LPX" , MemoryTypeId = 2 , ManufacturerId = 19 , Frequency = 2400 , Size = 8 , Timing = "none" , Price = 38 , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/ef1c9d46308283f227a0ba51e4179ff1.1600.jpg" },
-                new RAM() { Id = 1, Name = "Vengeance LPX", MemoryTypeId = 2, ManufacturerId = 19, Frequency = 3000, Size = 16, Timing = "16-20-20-38", Price = 73, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/897d32aa11f4462641daa6c62d1322f5.1600.jpg" },
-                new RAM() { Id = 1, Name = "Ripjaws V Series ", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 2400, Size = 16, Timing = "none", Price = 66, ImageURL = "http://ecx.images-amazon.com/images/I/41XcDGwMsBL.jpg" },
-                new RAM() { Id = 1, Name = "Ripjaws V", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 3600, Size = 16, Timing = "19-20-20-40", Price = 78, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/72816e43251cd35c4b3f598eb8fc16e0.1600.jpg" },
-                new RAM() { Id = 1, Name = "HyperX Predator", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2666, Size = 8, Timing = "none", Price = 43, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/f25ee4f0e1776a3d15c2286d35feeb8c.1600.jpg" }
+                new RAM() { Id = 2, Name = "Vengeance LPX", MemoryTypeId = 2, ManufacturerId = 19, Frequency = 3000, Size = 16, Timing = "16-20-20-38", Price = 73, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/897d32aa11f4462641daa6c62d1322f5.1600.jpg" },
+                new RAM() { Id = 3, Name = "Ripjaws V Series ", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 2400, Size = 16, Timing = "none", Price = 66, ImageURL = "http://ecx.images-amazon.com/images/I/41XcDGwMsBL.jpg" },
+                new RAM() { Id = 4, Name = "Ripjaws V", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 3600, Size = 16, Timing = "19-20-20-40", Price = 78, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/72816e43251cd35c4b3f598eb8fc16e0.1600.jpg" },
+                new RAM() { Id = 5, Name = "HyperX Predator", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2666, Size = 8, Timing = "none", Price = 43, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/f25ee4f0e1776a3d15c2286d35feeb8c.1600.jpg" }
+                );
+
+            context.Storages.AddOrUpdate(x => x.Id,
+                new Storage() { Id = 1 , Name = "660p Series" , ManufacturerId = 3 , Capacity = 2048 , ReadingSpeed = 800 , WritingSpeed = 700 , TypeId = 3 , Price = 185 , ImageURL = "https://images-fe.ssl-images-amazon.com/images/I/41-UBTlEZwL.jpg" },
+                new Storage() { Id = 2, Name = "Caviar Blue", ManufacturerId = 14, Capacity = 1000, ReadingSpeed = 150, WritingSpeed = 120, TypeId = 1, Price = 43, ImageURL = "http://ecx.images-amazon.com/images/I/51fbLQLVJFL.jpg" },
+                new Storage() { Id = 3, Name = "860 Evo", ManufacturerId = 9, Capacity = 500, ReadingSpeed = 500, WritingSpeed = 420, TypeId = 2, Price = 75, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/41JX1N9gi1L.jpg" },
+                new Storage() { Id = 4, Name = "970 Evo", ManufacturerId = 9, Capacity = 500, ReadingSpeed = 900, WritingSpeed = 750, TypeId = 3, Price = 90, ImageURL = "https://images-eu.ssl-images-amazon.com/images/I/41x8zIrgC3L.jpg" },
+                new Storage() { Id = 5, Name = "A400", ManufacturerId = 10, Capacity = 240, ReadingSpeed = 400, WritingSpeed = 300, TypeId = 2, Price = 32, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/97e2bd828644767c8a80b71f8cb14743.1600.jpg" }
+                );
+
+            context.Coolings.AddOrUpdate(x => x.Id,
+                new Cooling() { Id = 1 , Name = "AER RGB" , ManufacturerId = 8 , TypeId = 2 , RGB = true , Size = 120 , Speed = 1500 , Price= 28 , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/b19d6a6fea838158bcca998fcae5e6b0.1600.jpg" },
+                new Cooling() { Id = 2, Name = "LL120 RGB LED", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1500, Price = 30, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/4e2045757086fab56d2420d84fcf9619.1600.jpg" },
+                new Cooling() { Id = 3, Name = " LL140 RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 140, Speed = 1300, Price = 40, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/af0e3ae9695b1702e6e1b5d4f6200db6.1600.jpg" },
+                new Cooling() { Id = 4, Name = "SickleFlow", ManufacturerId = 6, TypeId = 2, RGB = false, Size = 120, Speed = 2000, Price = 10, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/4187AIcuisL._SX466_.jpg" },
+                new Cooling() { Id = 5, Name = " ML120 PRO RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1600, Price = 30, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/637d55a951c6564584edaa513645859e.1600.jpg" }
                 );
 
         }
