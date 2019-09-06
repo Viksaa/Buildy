@@ -12,6 +12,7 @@
         <tr>
             <th>Part</th>
             <th>Selected Part</th>
+            <th>Price</th>
             <th>Selection</th>
         </tr>
     </thead>
@@ -22,14 +23,17 @@
             <td>
                 @{
                     var cpu = "";
+                    var cpuPrice = "";
                     if (Session["Cpu"] != null)
                     {
                         var temp = (CPU)Session["Cpu"];
                         cpu = temp.Manufacturer.Name+" "+temp.Name;
+                        cpuPrice = "$"+temp.Price.ToString();
                     }
                 }
                 <a href="/computers">@cpu</a>
             </td>
+            <td>@cpuPrice</td>
             <td>
                 @Html.ActionLink("Add", "AddCpu", "Computers", new { @class = "btn btn-success" })
                 @{
@@ -46,23 +50,26 @@
             <td>
                 @{
                     var mb = "";
+                    var mbPrice = "";
                     if (Session["Mb"] != null)
                     {
-                        var tmp = (Motherboard) Session["Mb"];
-                        mb = tmp.Manufacturer.Name+" "+tmp.Name;
+                        var tmp = (Motherboard)Session["Mb"];
+                        mb = tmp.Manufacturer.Name + " " + tmp.Name;
+                        mbPrice = "$"+tmp.Price.ToString();
                     }
                 }
                 <a href="/computers">@mb</a>
             </td>
+            <td>@mbPrice</td>
             <td>
-                 @Html.ActionLink("Add", "AddMotherboard", "Computers", new {@class = "btn btn-success"})
-                 @{
-                     if (mb != "")
-                     {
-                         @Html.ActionLink("Remove", "RemoveMotherboard", "Computers",
-                             new { @class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this ?')"})
-                     }
-                 }
+                @Html.ActionLink("Add", "AddMotherboard", "Computers", new { @class = "btn btn-success" })
+                @{
+                    if (mb != "")
+                    {
+                        @Html.ActionLink("Remove", "RemoveMotherboard", "Computers",
+                            new { @class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this ?')" })
+                    }
+                }
             </td>
         </tr>
         <tr>
@@ -70,14 +77,17 @@
             <td>
                 @{
                     var ram = "";
+                    var ramPrice = "";
                     if (Session["Ram"] != null)
                     {
                         var tmp = (RAM)Session["Ram"];
                         ram = tmp.Manufacturer.Name + " " + tmp.Name;
+                        ramPrice = "$"+tmp.Price.ToString();
                     }
                     <a href="/computers">@ram</a>
                 }
             </td>
+            <td>@ramPrice</td>
             <td>
                 @Html.ActionLink("Add", "AddRam", "Computers", new { @class = "btn btn-success" })
                 @{
@@ -95,38 +105,44 @@
             <td>
                 @{
                     var Gpu = "";
+                    var gpuPrice = "";
                     if (Session["Gpu"] != null)
                     {
                         var tmp = (GPU)Session["Gpu"];
-                        Gpu = tmp.Manufacturer.Name+" "+tmp.Name;
+                        Gpu = tmp.Manufacturer.Name + " " + tmp.Name;
+                        gpuPrice = "$"+tmp.Price.ToString();
                     }
                     <a href="/computers">@Gpu</a>
                 }
             </td>
+            <td>@gpuPrice</td>
             <td>
                 @Html.ActionLink("Add", "AddGpu", "Computers", new { @class = "btn btn-success" })
-                        @{
-                            if (Gpu != "")
-                            {
-                                @Html.ActionLink("Remove", "RemoveGpu", "Computers",
-                                    new { @class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this ?')" })
-                            }
-                        }
-                    </td>
+                @{
+                    if (Gpu != "")
+                    {
+                        @Html.ActionLink("Remove", "RemoveGpu", "Computers",
+                            new { @class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this ?')" })
+                    }
+                }
+            </td>
         </tr>
         <tr>
             <td>Case</td>
             <td>
                 @{
                     var Case = "";
+                    var casePrice = "";
                     if (Session["Case"] != null)
                     {
                         var tmp = (Case)Session["Case"];
-                        Case = tmp.Manufacturer.Name+" "+tmp.Name;
+                        Case = tmp.Manufacturer.Name + " " + tmp.Name;
+                        casePrice = "$"+tmp.Price.ToString();
                     }
                     <a href="/computers">@Case</a>
                 }
             </td>
+            <td>@casePrice</td>
             <td>
                 @Html.ActionLink("Add", "AddCase", "Computers", new { @class = "btn btn-success" })
                 @{
@@ -143,14 +159,17 @@
             <td>
                 @{
                     var storage = "";
+                    var storagePrice = "";
                     if (Session["Storage"] != null)
                     {
                         var tmp = (Storage)Session["Storage"];
                         storage = tmp.Manufacturer.Name + " " + tmp.Name;
+                        storagePrice = "$"+tmp.Price.ToString();
                     }
                     <a href="/computers">@storage</a>
                 }
             </td>
+            <td>@storagePrice</td>
             <td>
                 @Html.ActionLink("Add", "AddStorage", "Computers", new { @class = "btn btn-success" })
                 @{
@@ -167,14 +186,17 @@
             <td>
                 @{
                     var Psu = "";
+                    var psuPrice = "";
                     if (Session["Psu"] != null)
                     {
                         var tmp = (PSU)Session["Psu"];
                         Psu = tmp.Manufacturer.Name + " " + tmp.Name;
+                        psuPrice = "$"+tmp.Price.ToString();
                     }
                     <a href="/computers">@Psu</a>
                 }
             </td>
+            <td>@psuPrice</td>
             <td>
                 @Html.ActionLink("Add", "AddPsu", "Computers", new { @class = "btn btn-success" })
                 @{
@@ -191,14 +213,17 @@
             <td>
                 @{
                     var cooling = "";
+                    var coolingPrice = "";
                     if (Session["Cooling"] != null)
                     {
                         var tmp = (Cooling)Session["Cooling"];
                         cooling = tmp.Manufacturer.Name + " " + tmp.Name;
+                        coolingPrice = "$"+tmp.Price.ToString();
                     }
                     <a href="/computers">@cooling</a>
                 }
             </td>
+             <td>@coolingPrice</td>
             <td>
                 @Html.ActionLink("Add", "AddCooling", "Computers", new { @class = "btn btn-success" })
                 @{
