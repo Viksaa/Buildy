@@ -78,12 +78,29 @@ namespace Buildy.Migrations
                 new Chipset() { Id = 3, Name = "LGA 1156" },
                 new Chipset() { Id = 4, Name = "LGA 1155" },
                 new Chipset() { Id = 5, Name = "LGA 1150" },
-                new Chipset() { Id = 6, Name = "LGA 1366" }
+                new Chipset() { Id = 6, Name = "LGA 1366" },
+                new Chipset() { Id = 7, Name = "LGA 1151" }
                );
 
             context.CoolingTypes.AddOrUpdate(x => x.Id,
                 new CoolingType() {Id = 1, Name = "Liquid" },
                 new CoolingType() { Id = 1, Name = "Air" }
+                );
+
+            context.Cpus.AddOrUpdate(x => x.Id,
+                new CPU() { Id = 1 , Name = "Ryzen 5 3600" , Cores = 6 , Threads = 12 , Frequency =  3, Cache = 32 , CoolingSolution = true , ManufacturerId = 2 , ChipsetId = 1  , Price = 193 , ImageURL= "https://cdn.pcpartpicker.com/static/forever/images/product/c7baf2c9c9cc15ae23adb24c2f4316fc.1600.jpg" },
+                new CPU() { Id = 2, Name = "Ryzen 7 3700X", Cores = 8, Threads = 16, Frequency = 4, Cache = 32, CoolingSolution = true, ManufacturerId = 2, ChipsetId = 1, Price = 350 , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/23cd3adfd50037c1b44d6d53edb15248.1600.jpg" },
+                new CPU() { Id = 3, Name = "Ryzen 9 3900X", Cores = 12, Threads = 24, Frequency = 4, Cache = 64, CoolingSolution = true, ManufacturerId = 2, ChipsetId = 1, Price = 500  , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/14adcd1fc88ebf386b746037c966b6af.1600.jpg" },
+                new CPU() { Id = 4, Name = "Core i7-9700K", Cores = 8, Threads = 16, Frequency = 4, Cache = 12, CoolingSolution = true, ManufacturerId = 3, ChipsetId = 7, Price = 340 , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/3760e89d1820da393f084e2c18a62e3b.1600.jpg" },
+                new CPU() { Id = 5, Name = "Core i9-9900K", Cores = 8, Threads = 16, Frequency = 5, Cache = 32, CoolingSolution = true, ManufacturerId = 3, ChipsetId = 7, Price = 500 , ImageURL = "https://images-na.ssl-images-amazon.com/images/I/41EDFtP5hpL.jpg" }
+                );
+
+            context.Motherboards.AddOrUpdate(x => x.Id,
+                new Motherboard() { Id = 1 , Name = "B450 TOMAHAWK" , ChipsetId = 1 , DimmSlots = 4 , MotherboardTypeId = 1 , ManufacturerId = 4 , MemorySupport = 64 , SocketId = 1 , Price = 115 , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/76a05556b1231db294600c672f605747.1600.jpg" },
+                new Motherboard() { Id = 2, Name = "ROG STRIX B450-F GAMING", ChipsetId = 1, DimmSlots = 4, MotherboardTypeId = 1, ManufacturerId = 18, MemorySupport = 64, SocketId = 1, Price = 120, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/ae3eca9a74b37b6a2dafadcc948c208d.1600.jpg" },
+                new Motherboard() { Id = 3, Name = "B450M DS3H", ChipsetId = 1, DimmSlots = 4, MotherboardTypeId = 2, ManufacturerId = 11, MemorySupport = 64, SocketId = 1, Price = 73, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/75eae1d6254dc2bd453a2cf64b601ede.1600.jpg" },
+                new Motherboard() { Id = 4, Name = "ROG STRIX Z390-E", ChipsetId = 7, DimmSlots = 4, MotherboardTypeId = 1, ManufacturerId = 18, MemorySupport = 64, SocketId = 1, Price = 115, ImageURL = "https://images-eu.ssl-images-amazon.com/images/I/51mDZNleLaL.jpg" },
+                new Motherboard() { Id = 5, Name = "Z390-A PRO", ChipsetId = 7, DimmSlots = 4, MotherboardTypeId = 1, ManufacturerId = 4, MemorySupport = 64, SocketId = 1, Price = 130, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/fcc113830e84371c4f0f83c5ed5f4ae4.1600.jpg" }
                 );
 
             context.Cases.AddOrUpdate(x => x.Id,

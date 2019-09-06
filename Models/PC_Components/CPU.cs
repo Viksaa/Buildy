@@ -34,10 +34,10 @@ namespace Buildy.Models.PC_Components
 
         public int Cache { get; set; }
 
-        public int SocketId { get; set; }
+        public int ChipsetId { get; set; }
 
-        [ForeignKey("SocketId")]
-        public Socket Socket { get; set; }
+        [ForeignKey("ChipsetId")]
+        public Chipset Chipset { get; set; }
 
         [DisplayName("Cooling")]
         public bool CoolingSolution { get; set; }

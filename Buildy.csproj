@@ -218,6 +218,10 @@
     <Compile Include="Migrations\201909031501532_TestSeeder.Designer.cs">
       <DependentUpon>201909031501532_TestSeeder.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909061235349_Cpu refactor.cs" />
+    <Compile Include="Migrations\201909061235349_Cpu refactor.Designer.cs">
+      <DependentUpon>201909061235349_Cpu refactor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -596,6 +600,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909031501532_TestSeeder.resx">
       <DependentUpon>201909031501532_TestSeeder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909061235349_Cpu refactor.resx">
+      <DependentUpon>201909061235349_Cpu refactor.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

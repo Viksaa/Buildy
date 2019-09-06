@@ -155,7 +155,7 @@ namespace Buildy.Controllers
         {
             var dbCpu = await db.Cpus
                 .Include(c => c.Manufacturer)
-                .Include(c => c.Socket)
+                .Include(c => c.Chipset)
                 .ToListAsync();
 
             return View("AddCpu", dbCpu);
