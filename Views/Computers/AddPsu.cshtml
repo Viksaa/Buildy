@@ -1,13 +1,13 @@
-﻿@model IEnumerable<Buildy.Models.PC_Components.GPU>
+﻿@model IEnumerable<Buildy.Models.PC_Components.PSU>
 
 @{
-    ViewBag.Title = "Add Gpu";
+    ViewBag.Title = "AddPsu";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
     <h2>View</h2>
 
-<table class="table" id="Gpu">
+<table class="table" id="Psu">
     <thead>
         <tr>
             <th class="no-sort">
@@ -20,19 +20,13 @@
                 @Html.DisplayNameFor(model => model.Manufacturer)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RamMemoryType)
+                @Html.DisplayNameFor(model => model.PsuEficency)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.RAMSize)
+                @Html.DisplayNameFor(model => model.Capacity)W
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Timing)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Frequency)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MemoryClock)
+                @Html.DisplayNameFor(model => model.Modular)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -54,25 +48,19 @@
                     @Html.DisplayFor(modelItem => item.Manufacturer.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.RamMemoryType.Name)
+                    @Html.DisplayFor(modelItem => item.PsuEficency.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.RAMSize)Gb
+                    @Html.DisplayFor(modelItem => item.Capacity)Gb
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Timing)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Frequency) MHz
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.MemoryClock) Mhz
+                    @Html.DisplayFor(modelItem => item.Modular)
                 </td>
                 <td>
                     $@Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.ActionLink("Add", "AddGpuToPc", new { id = item.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Add", "AddPsuToPc", new { id = item.Id }, new { @class = "btn btn-success" })
                 </td>
             </tr>
         }
@@ -86,7 +74,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            $("#Gpu").dataTable({
+            $("#Psu").dataTable({
                 "order": [],
                 "columnDefs": [{
                     "targets": 'no-sort',

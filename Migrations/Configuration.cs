@@ -34,7 +34,8 @@ namespace Buildy.Migrations
               new Manufacturer() { Id = 15, Name = "Fractial Design" },
               new Manufacturer() { Id = 16, Name = "Sharkoon" },
               new Manufacturer() { Id = 17, Name = "A-Data" },
-              new Manufacturer() { Id = 18, Name = "Asus" }
+              new Manufacturer() { Id = 18, Name = "Asus" },
+              new Manufacturer() { Id = 18, Name = "Corsair" }
                );
 
             context.MotherboardTypes.AddOrUpdate(x => x.Id,
@@ -100,6 +101,15 @@ namespace Buildy.Migrations
                 new GPU() { Id = 4, Name = "RTX 2080 Ti ROG Strix Gaming OC", ManufacturerId = 18, RAMSize = 11, Price = 1280, Frequency = 1350, Timing = "1", MemoryClock = 14000, RAMTypeId = 5, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/0174f5005fe9f34decdf2d379bfe7221.1600.jpg" },
                 new GPU() { Id = 5, Name = "RTX 2080 ROG Strix Gaming", ManufacturerId = 18, RAMSize = 8, Price = 770, Frequency = 1515, Timing = "1", MemoryClock = 14000, RAMTypeId = 5, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/d15b18b5b4b518256c4b8003672424c7.1600.jpg" }
                 );
+
+            context.Psus.AddOrUpdate(x => x.Id,
+                new PSU() { Id = 1 , Name = "CXM" , Capacity = 550 , Modular = false , EfficiencyId = 1 , ManufacturerId = 18 ,Price = 70 ,ImageURL = "http://ecx.images-amazon.com/images/I/51RxdsALapL.jpg" },
+                new PSU() { Id = 2, Name = "SuperNOVA G3", Capacity = 750, Modular = true, EfficiencyId = 3, ManufacturerId = 5, Price = 127, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/2a2172d1f17661103de901f43d831187.1600.jpg" },
+                new PSU() { Id = 3, Name = "RMx (2018)", Capacity = 650, Modular = true, EfficiencyId = 3, ManufacturerId = 18, Price = 85, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/51icxwzI9VL.jpg" },
+                new PSU() { Id = 4, Name = "MASTERWATT MAKER MIJ", Capacity = 1200, Modular = true, EfficiencyId = 5, ManufacturerId = 6, Price = 200, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/244afeb4bd3917774842c887571a9803.1600.jpg" },
+                new PSU() { Id = 5, Name = "Master V", Capacity = 1000, Modular = true, EfficiencyId = 4, ManufacturerId = 6, Price = 180, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/c28253b1b63474d96ab2f28ff5cdcdce.1600.jpg" }
+                );
+
         }
     }
 }

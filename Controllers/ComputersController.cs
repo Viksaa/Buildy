@@ -248,5 +248,29 @@ namespace Buildy.Controllers
             Session["Gpu"] = null;
             return RedirectToAction("Create");
         }
+
+        public async Task<ActionResult> AddPsu()
+        {
+            var dbPsu = await db.Psus
+                .Include(mb => mb.Manufacturer)
+                .Include(mb => mb.PsuEficency)
+                .ToListAsync();
+
+            return View("AddPsu", dbPsu);
+        }
+
+        public async Task<ActionResult> AddPsuToPc(int id)
+        {
+            var dbPsu = await db.Psus.Include(mb => mb.Manufacturer).Where(mb => mb.Id == id).FirstAsync();
+            Session["Psu"] = dbPsu;
+
+            return RedirectToAction("Create");
+        }
+
+        public ActionResult RemovePsu()
+        {
+            Session["Psu"] = null;
+            return RedirectToAction("Create");
+        }
     }
 }
