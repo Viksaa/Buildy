@@ -35,7 +35,7 @@ namespace Buildy.Migrations
               new Manufacturer() { Id = 16, Name = "Sharkoon" },
               new Manufacturer() { Id = 17, Name = "A-Data" },
               new Manufacturer() { Id = 18, Name = "Asus" },
-              new Manufacturer() { Id = 18, Name = "Corsair" }
+              new Manufacturer() { Id = 19, Name = "Corsair" }
                );
 
             context.MotherboardTypes.AddOrUpdate(x => x.Id,
@@ -125,6 +125,14 @@ namespace Buildy.Migrations
                 new PSU() { Id = 3, Name = "RMx (2018)", Capacity = 650, Modular = true, EfficiencyId = 3, ManufacturerId = 18, Price = 85, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/51icxwzI9VL.jpg" },
                 new PSU() { Id = 4, Name = "MASTERWATT MAKER MIJ", Capacity = 1200, Modular = true, EfficiencyId = 5, ManufacturerId = 6, Price = 200, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/244afeb4bd3917774842c887571a9803.1600.jpg" },
                 new PSU() { Id = 5, Name = "Master V", Capacity = 1000, Modular = true, EfficiencyId = 4, ManufacturerId = 6, Price = 180, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/c28253b1b63474d96ab2f28ff5cdcdce.1600.jpg" }
+                );
+
+            context.Rams.AddOrUpdate(x => x.Id,
+                new RAM() { Id = 1 , Name = "Vengeance LPX" , MemoryTypeId = 2 , ManufacturerId = 19 , Frequency = 2400 , Size = 8 , Timing = "none" , Price = 38 , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/ef1c9d46308283f227a0ba51e4179ff1.1600.jpg" },
+                new RAM() { Id = 1, Name = "Vengeance LPX", MemoryTypeId = 2, ManufacturerId = 19, Frequency = 3000, Size = 16, Timing = "16-20-20-38", Price = 73, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/897d32aa11f4462641daa6c62d1322f5.1600.jpg" },
+                new RAM() { Id = 1, Name = "Ripjaws V Series ", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 2400, Size = 16, Timing = "none", Price = 66, ImageURL = "http://ecx.images-amazon.com/images/I/41XcDGwMsBL.jpg" },
+                new RAM() { Id = 1, Name = "Ripjaws V", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 3600, Size = 16, Timing = "19-20-20-40", Price = 78, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/72816e43251cd35c4b3f598eb8fc16e0.1600.jpg" },
+                new RAM() { Id = 1, Name = "HyperX Predator", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2666, Size = 8, Timing = "none", Price = 43, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/f25ee4f0e1776a3d15c2286d35feeb8c.1600.jpg" }
                 );
 
         }

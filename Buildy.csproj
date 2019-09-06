@@ -550,6 +550,7 @@
     <Content Include="Views\Computers\AddCase.cshtml" />
     <Content Include="Views\Computers\AddGpu.cshtml" />
     <Content Include="Views\Computers\AddPsu.cshtml" />
+    <Content Include="Views\Computers\AddRam.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

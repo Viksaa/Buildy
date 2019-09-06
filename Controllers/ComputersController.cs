@@ -272,5 +272,29 @@ namespace Buildy.Controllers
             Session["Psu"] = null;
             return RedirectToAction("Create");
         }
+
+        public async Task<ActionResult> AddRam()
+        {
+            var dbRam = await db.Rams
+                .Include(mb => mb.Manufacturer)
+                .Include(mb => mb.RamMemoryType)
+                .ToListAsync();
+
+            return View("AddRam", dbRam);
+        }
+
+        public async Task<ActionResult> AddRamToPc(int id)
+        {
+            var dbRam = await db.Rams.Include(mb => mb.Manufacturer).Where(mb => mb.Id == id).FirstAsync();
+            Session["Ram"] = dbRam;
+
+            return RedirectToAction("Create");
+        }
+
+        public ActionResult RemoveRam()
+        {
+            Session["Ram"] = null;
+            return RedirectToAction("Create");
+        }
     }
 }
