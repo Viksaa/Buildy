@@ -320,5 +320,29 @@ namespace Buildy.Controllers
             Session["Storage"] = null;
             return RedirectToAction("Create");
         }
+
+        public async Task<ActionResult> AddCooling()
+        {
+            var dbCooling = await db.Coolings
+                .Include(mb => mb.Manufacturer)
+                .Include(mb => mb.CoolingType)
+                .ToListAsync();
+
+            return View("AddCooling", dbCooling);
+        }
+
+        public async Task<ActionResult> AddCoolingToPc(int id)
+        {
+            var dbCooling = await db.Coolings.Include(mb => mb.Manufacturer).Where(mb => mb.Id == id).FirstAsync();
+            Session["Cooling"] = dbCooling;
+
+            return RedirectToAction("Create");
+        }
+
+        public ActionResult RemoveCooling()
+        {
+            Session["Cooling"] = null;
+            return RedirectToAction("Create");
+        }
     }
 }

@@ -1,14 +1,13 @@
-﻿@model IEnumerable<Buildy.Models.PC_Components.Case>
+﻿@model IEnumerable<Buildy.Models.PC_Components.Cooling>
 
 @{
-    ViewBag.Title = "AddCase";
+    ViewBag.Title = "AddCooling";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AddCase</h2>
+<h2>AddCooling</h2>
 
-
-<table class="table" id="Case">
+<table class="table" id="Cooling">
     <thead>
         <tr>
             <th class="no-sort">
@@ -21,13 +20,16 @@
                 @Html.DisplayNameFor(model => model.Manufacturer)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Dimensions)
+                @Html.DisplayNameFor(model => model.Size)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FanSupport)
+                @Html.DisplayNameFor(model => model.Speed)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MotherboardType.Name)
+                @Html.DisplayNameFor(model => model.CoolingType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RGB)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Price)
@@ -49,19 +51,22 @@
                     @Html.DisplayFor(modelItem => item.Manufacturer.Name)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Dimensions)
+                    @Html.DisplayFor(modelItem => item.Size)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.FanSupport)
+                    @Html.DisplayFor(modelItem => item.Speed) Rpm
                 </td>
                 <td>
-                    @Html.DisplayFor(model => item.MotherboardType.Name)
+                    @Html.DisplayFor(model => item.CoolingType.Name) 
+                </td>
+                <td>
+                    <i class="glyphicon @(item.RGB ? "glyphicon-check" : "glyphicon-unchecked")"></i>
                 </td>
                 <td>
                     $@Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
-                    @Html.ActionLink("Add", "AddCaseToPc", new { id = item.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Add", "AddCoolingToPc", new { id = item.Id }, new { @class = "btn btn-success" })
                 </td>
             </tr>
         }
@@ -75,7 +80,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            $("#Case").dataTable({
+            $("#Cooling").dataTable({
                 "order": [],
                 "columnDefs": [{
                     "targets": 'no-sort',
@@ -85,4 +90,3 @@
         });
     </script>
 }
-
