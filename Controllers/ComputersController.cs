@@ -9,6 +9,7 @@ using System.Web;
 using System.Web.Mvc;
 using Buildy.Models;
 using Buildy.Models.PC_Components;
+using Buildy.Filters;
 
 namespace Buildy.Controllers
 {
@@ -153,11 +154,9 @@ namespace Buildy.Controllers
 
         public async Task<ActionResult> AddCpu()
         {
-            var dbCpu = await db.Cpus
-                .Include(c => c.Manufacturer)
-                .Include(c => c.Chipset)
-                .ToListAsync();
-
+            var cpuQuery = new CpuFilter(Session);
+            var dbCpu = await cpuQuery.FilterCpu();
+           
             return View("AddCpu", dbCpu);
         }
 
