@@ -1,7 +1,144 @@
-﻿@{
+﻿<!-- Libraries CSS Files -->
+<link href="~/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+<link href="~/lib/animate/animate.min.css" rel="stylesheet">
+<link href="~/lib/ionicons/css/ionicons.min.css" rel="stylesheet">
+<link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+<link href="~/lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+<!-- Main Stylesheet File -->
+<link href="~/lib/style.css" rel="stylesheet">
+
+
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
 
-<p>Use this area to provide additional information.</p>
+
+
+
+
+
+<header class="section-header" style="margin-top:70px">
+    <h3 style="font-size:50px">About Us</h3>
+
+</header>
+
+
+
+
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col col-lg-12">
+            <br />
+        </div>
+    </div>
+
+
+    <section id="about">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-5 col-md-6">
+                    <div class="">
+                        <br />
+                        <br />
+                        <img src="~/Resources/circuitboard.jpg" alt="" style="width:105%">
+                    </div>
+                </div>
+
+                <div class="col-lg-7 col-md-6">
+                    <div class="about-content">
+                        <h2>What is Buildy?</h2>
+                        <br />
+                        <h4>Want to build a gaming rig, but don't know if your components are compatible ?</h4>
+                        <p>With Buildy, you can seamlessly choose between dozens of PC components, check their specifications, and more!</p>
+                        <p> Our software will automatically sort the components and make sure they are compatible with each other. Get the best performacne for the money you pay!</p>
+                        <ul>
+                            <li><i class="ion-android-checkmark-circle"></i> Choose between hundreads of PC Components</li>
+                            <li><i class="ion-android-checkmark-circle"></i>Check their specifications, pricing, and compatibility.</li>
+                            <li><i class="ion-android-checkmark-circle"></i> Don't worry about components that don't go together. <b>Buildy does it for you!</b></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section><!-- #about -->
+    <!--==========================
+      Services Section
+    ============================-->
+    <section id="services">
+        <div class="container">
+
+            <header class="section-header">
+                <h3>Technology in our software</h3>
+                <p>What's powering Buildy, and how do we do it</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                    <div class="box">
+                        <div class="icon" style="background: #fceef3;"><i class="ion-ios-analytics-outline" style="color: #ff689b;"></i></div>
+                        <h4 class="title"><a href="">C#</a></h4>
+                        <p class="description">C# is a general-purpose, multi-paradigm programming language that is the main core of Buildy</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-duration="1.4s">
+                    <div class="box">
+                        <div class="icon" style="background: #fff0da;"><i class="ion-ios-bookmarks-outline" style="color: #e98e06;"></i></div>
+                        <h4 class="title"><a href="">MySQL Database</a></h4>
+                        <p class="description">Chingo DB. Simple, yet powerful database solution, housing all PC components! It's a local database</p>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-4 wow bounceInUp" data-wow-delay="0.1s" data-wow-duration="1.4s">
+                    <div class="box">
+                        <div class="icon" style="background: #e6fdfc;"><i class="ion-ios-paper-outline" style="color: #3fcdc7;"></i></div>
+                        <h4 class="title"><a href="">Bootstrap 4.3</a></h4>
+                        <p class="description">Powering the front-end part of the application, and the complete GUI. Very nice, 10/10!</p>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </section><!-- #services -->
+
+
+
+
+
+
+</div>
+
+<div class="container">
+    <!--==========================
+          Call To Action Section
+        ============================-->
+    <section id="call-to-action" class="wow fadeInUp" style="margin-bottom:5px; margin-left:-60px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-9 text-center text-lg-left">
+                    <h3 class="cta-title">Ready to give it a try ?</h3>
+                </div>
+                <div class="col-lg-3 cta-btn-container text-center">
+                    <a class="cta-btn align-middle" href="/Computers/create">Try Buildy</a>
+                </div>
+            </div>
+
+        </div>
+    </section><!-- #call-to-action -->
+    
+</div>
+
+<br />
+<br />
+<br />
