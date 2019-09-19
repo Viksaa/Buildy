@@ -1,5 +1,5 @@
 ﻿@model IEnumerable<Buildy.Models.PC_Components.RAM>
-
+@using Buildy.Models.PC_Components;
 @{
     ViewBag.Title = "AddRam";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -66,6 +66,24 @@
                     $@Html.DisplayFor(modelItem => item.Price)
                 </td>
                 <td>
+                    <label>Ammount:</label>
+                    <select class="form-control" id="sel @item.Id">
+                        @if (Session["Mb"] != null)
+                        {
+                            var mb = (Motherboard)Session["Mb"];
+                            for (int i = 1; i <= mb.DimmSlots && i*item.Size <= mb.MemorySupport; i++)
+                            {
+                                <option>@i</option>
+                            }
+                        }
+                        else
+                        {
+                            <option>1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                        }
+                    </select>
                     @Html.ActionLink("Add", "AddRamToPc", new { id = item.Id }, new { @class = "btn btn-success" })
                 </td>
             </tr>

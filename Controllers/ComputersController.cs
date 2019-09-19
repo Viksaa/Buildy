@@ -70,6 +70,13 @@ namespace Buildy.Controllers
             return View(computer);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save()
+        {
+            return View();
+        }
+
         // GET: Computers/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {

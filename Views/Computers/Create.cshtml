@@ -27,8 +27,8 @@
                     if (Session["Cpu"] != null)
                     {
                         var temp = (CPU)Session["Cpu"];
-                        cpu = temp.Manufacturer.Name+" "+temp.Name;
-                        cpuPrice = "$"+temp.Price.ToString();
+                        cpu = temp.Manufacturer.Name + " " + temp.Name;
+                        cpuPrice = "$" + temp.Price.ToString();
                     }
                 }
                 <a href="/computers">@cpu</a>
@@ -39,7 +39,7 @@
                 @{
                     if (cpu != "")
                     {
-                        @Html.ActionLink("Remove", "RemoveCpu", "Computers", 
+                        @Html.ActionLink("Remove", "RemoveCpu", "Computers",
                             new { @class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this ?')" })
                     }
                 }
@@ -55,7 +55,7 @@
                     {
                         var tmp = (Motherboard)Session["Mb"];
                         mb = tmp.Manufacturer.Name + " " + tmp.Name;
-                        mbPrice = "$"+tmp.Price.ToString();
+                        mbPrice = "$" + tmp.Price.ToString();
                     }
                 }
                 <a href="/computers">@mb</a>
@@ -82,7 +82,7 @@
                     {
                         var tmp = (RAM)Session["Ram"];
                         ram = tmp.Manufacturer.Name + " " + tmp.Name;
-                        ramPrice = "$"+tmp.Price.ToString();
+                        ramPrice = "$" + tmp.Price.ToString();
                     }
                     <a href="/computers">@ram</a>
                 }
@@ -110,7 +110,7 @@
                     {
                         var tmp = (GPU)Session["Gpu"];
                         Gpu = tmp.Manufacturer.Name + " " + tmp.Name;
-                        gpuPrice = "$"+tmp.Price.ToString();
+                        gpuPrice = "$" + tmp.Price.ToString();
                     }
                     <a href="/computers">@Gpu</a>
                 }
@@ -137,7 +137,7 @@
                     {
                         var tmp = (Case)Session["Case"];
                         Case = tmp.Manufacturer.Name + " " + tmp.Name;
-                        casePrice = "$"+tmp.Price.ToString();
+                        casePrice = "$" + tmp.Price.ToString();
                     }
                     <a href="/computers">@Case</a>
                 }
@@ -164,7 +164,7 @@
                     {
                         var tmp = (Storage)Session["Storage"];
                         storage = tmp.Manufacturer.Name + " " + tmp.Name;
-                        storagePrice = "$"+tmp.Price.ToString();
+                        storagePrice = "$" + tmp.Price.ToString();
                     }
                     <a href="/computers">@storage</a>
                 }
@@ -191,7 +191,7 @@
                     {
                         var tmp = (PSU)Session["Psu"];
                         Psu = tmp.Manufacturer.Name + " " + tmp.Name;
-                        psuPrice = "$"+tmp.Price.ToString();
+                        psuPrice = "$" + tmp.Price.ToString();
                     }
                     <a href="/computers">@Psu</a>
                 }
@@ -218,12 +218,12 @@
                     {
                         var tmp = (Cooling)Session["Cooling"];
                         cooling = tmp.Manufacturer.Name + " " + tmp.Name;
-                        coolingPrice = "$"+tmp.Price.ToString();
+                        coolingPrice = "$" + tmp.Price.ToString();
                     }
                     <a href="/computers">@cooling</a>
                 }
             </td>
-             <td>@coolingPrice</td>
+            <td>@coolingPrice</td>
             <td>
                 @Html.ActionLink("Add", "AddCooling", "Computers", new { @class = "btn btn-success" })
                 @{
@@ -237,12 +237,21 @@
         </tr>
     </tbody>
 </table>
+@using (Html.BeginForm("Save", "Computers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" class="btn btn-default" value="Save" />
+        </div>
+    </div>
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
     <script>
         $(document).ready(function () {
-            $(".btn-delete").click(function(event) {
+            $(".btn-delete").click(function (event) {
                 event.preventDefault();
                 $('<div title="Confirm Box"></div>').dialog({
                     open: function (event, ui) {

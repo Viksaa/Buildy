@@ -42,6 +42,13 @@ namespace Buildy.Filters
                 var tempCase = (Case)Session["Case"];
                 motherboardQuery = motherboardQuery.Where(mb => mb.MotherboardTypeId == tempCase.MotherboardTypeId);
             }
+            if (Session["Ram"]!= null && Session["RamAmmount"] != null)
+            {
+                var tempRam = (RAM)Session["Ram"];
+                int ammount = (int)Session["RamAmmount"];
+                motherboardQuery = motherboardQuery.Where(c => c.MemorySupport >= tempRam.Size *  ammount);
+                motherboardQuery = motherboardQuery.Where(c => c.DimmSlots >= ammount);
+            }
 
             var motherboards = await motherboardQuery.ToListAsync();
             return  motherboards ;
