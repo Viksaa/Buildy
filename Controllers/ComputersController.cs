@@ -197,10 +197,8 @@ namespace Buildy.Controllers
 
         public async Task<ActionResult> AddCase()
         {
-            var dbCase = await db.Cases
-                .Include(mb => mb.Manufacturer)
-                .Include(mb => mb.MotherboardType)
-                .ToListAsync();
+            var caseQuery = new CaseFilter(Session);
+            var dbCase = await caseQuery.FilterCase();
 
             return View("AddCase", dbCase);
         }
