@@ -176,13 +176,8 @@ namespace Buildy.Controllers
 
         public async Task<ActionResult> AddMotherboard()
         {
-            var dbMb = await db.Motherboards
-                .Include(mb => mb.Manufacturer)
-                .Include(mb => mb.Socket)
-                .Include(mb => mb.Chipset)
-                .Include(mb => mb.MotherboardType)
-                .ToListAsync();
-
+            var motherboardQuery = new MotherboardFilter(Session);
+            var dbMb = await motherboardQuery.FilterMotherboard();
             return View("AddMotherboard", dbMb);
         }
 

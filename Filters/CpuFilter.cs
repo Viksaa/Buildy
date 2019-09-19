@@ -38,7 +38,7 @@ namespace Buildy.Filters
                 cpuQuery = cpuQuery.Where(c => c.ChipsetId == tempMb.ChipsetId);
             }
 
-            var cpus = cpuQuery.ToList();
+            var cpus = await cpuQuery.ToListAsync();
             return cpus;
         }
     }
