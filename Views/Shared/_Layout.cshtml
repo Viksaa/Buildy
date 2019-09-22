@@ -19,14 +19,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a href="@Url.Action("Index", "Home")">
-                    <img class="header-logo" src="~/Resources/BuildyLogoWhite.png" alt="logo"/>
+                    <img class="header-logo" src="~/Resources/BuildyLogoWhite.png" alt="logo" />
                 </a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li class="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active-menu" : "")">
                         <a href="@Url.Action("Index", "Home")">
-                            <img src="~/Resources/business-card-of-a-man-with-contact-info.svg" alt="logo"/>
+                            <img src="~/Resources/business-card-of-a-man-with-contact-info.svg" alt="logo" />
                             What is Buildy?
                         </a>
                     </li>
@@ -42,14 +42,14 @@
         @RenderBody()
         @*<hr />*@
     </div>
-    
+
     <footer>
         <p>&copy; @DateTime.Now.Year Powered by Buildy</p>
         <a href="https://github.com/Viksaa/Buildy">
-            <img class="footer-logo" src="~/Resources/BuildyLogoWhite.png" alt="LOGO"/>
+            <img class="footer-logo" src="~/Resources/BuildyLogoWhite.png" alt="LOGO" />
         </a>
     </footer>
-@Scripts.Render("~/bundles/jquery")
-@RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
