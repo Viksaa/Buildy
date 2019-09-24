@@ -1,7 +1,6 @@
 ﻿@import url('https://fonts.googleapis.com/css?family=Poppins:400,500&display=swap');
 
 body {
-    padding-top: 50px;
     font-family: 'Poppins', sans-serif;
 }
 
@@ -9,6 +8,7 @@ body {
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    margin-top: 60px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -48,6 +48,7 @@ textarea {
     background-image: linear-gradient(to bottom, var(--secondary-menu-color), 0%, var(--main-menu-color), 100%);
     background-repeat: repeat-x;
     text-shadow: var(--main-menu-text-shadows);
+    margin: 0 !important;
 }
 
 .custom-navbar .navbar-brand {
@@ -63,7 +64,6 @@ textarea {
 
 .custom-navbar .navbar-nav > li > a {
     color: #fff;
-    min-height: 60px;
     line-height: 31px;
 }
 

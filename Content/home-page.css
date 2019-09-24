@@ -1,4 +1,52 @@
 ﻿.home-page-container {
     margin-left: calc(50% - 50vw);
     width: 100vw;
+    /*padding-top: 13px;*/
+}
+
+.image-container {
+    height: 70vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../Resources/home-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: screen multiply;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pc-case {
+    width: 45%;
+    height: auto;
+}
+
+.desktop-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.moto {
+    color: #fff;
+}
+
+.btn-build {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.desktop-content h1 {
+    font-size: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .desktop-content {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: xx-large !important;
+    }
 }
