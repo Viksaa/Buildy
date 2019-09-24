@@ -2,6 +2,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    margin-bottom: 60px;
 }
 
 /* Set padding to keep content from hitting the edges */
