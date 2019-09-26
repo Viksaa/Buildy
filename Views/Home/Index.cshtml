@@ -2,7 +2,7 @@
     ViewBag.Title = "Home Page";
     @Styles.Render("~/Content/home-page.css")
 }
-<div class="row home-page-container">
+<div class="home-page-container">
     <div class="image-container">
         <div class="desktop-content">
             <img src="~/Resources/h200_case.png" class="pc-case"/>
@@ -12,6 +12,47 @@
             </div>
         </div>
     </div>
+    
+    <div class="row our-pcs-text">
+        Some of our PCs
+    </div>
+
+    <div class="row our-pcs">
+        <div class="row our-pcs-row-one">
+            <div class="col pc-viksa">
+                <div class="prebuild-content-viksa">
+                    <h4>Viktor's Workstation</h4>
+                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                </div>
+                <img src="~/Resources/H500_transparent.png" class="our-pcs-case-image"/>
+            </div>
+            <div class="col pc-cingo">
+                <div class="prebuild-content-cingo">
+                    <h4>Nikola's Workstation</h4>
+                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                </div>
+                <img src="~/Resources/h500_white_transparentpng.png" class="our-pcs-case-image"/>
+            </div>
+        </div>
+
+        <div class="row our-pcs-row-one">
+            <div class="col pc-maze">
+                <div class="prebuild-content-viksa">
+                    <h4>Andrej's Workstation</h4>
+                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                </div>
+                <img src="~/Resources/h500_white_transparentpng.png" alt="imageplaceholder" class="our-pcs-case-image"/>
+            </div>
+            <div class="col pc-astor">
+                <div class="prebuild-content-viksa">
+                    <h4>Astor's Workstation</h4>
+                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                </div>
+                <img src="~/Resources/h500_white_transparentpng.png" alt="imageplaceholder" class="our-pcs-case-image"/>
+            </div>
+        </div>
+    </div>
+
 </div>
 <div class="row">
     <div class="col-md-4">

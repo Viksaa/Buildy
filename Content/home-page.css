@@ -41,6 +41,84 @@
     font-size: 50px;
 }
 
+.our-pcs {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.our-pcs-text {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+}
+
+.our-pcs-row-one {
+    height: 50%;
+    /*background-color: red;*/
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+}
+
+.our-pcs-row-two {
+    height: 50%;
+    /*background-color: blue;*/
+    flex: 1;
+}
+
+.our-pcs-case-image {
+    width: 25%;
+    height: auto;
+}
+
+.pc-viksa {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/viksa-pc-background.jpg);
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+}
+
+.pc-maze {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(../Resources/maze-pc-background.jpg);
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pc-astor {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url(../Resources/astor-pc-background.jpg);
+    display: flex;
+    justify-content: space-around;
+}
+
+.prebuild-content-viksa,
+.prebuild-content-cingo {
+    display: flex;
+    /*flex: 1;*/
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pc-cingo {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex: 1;
+    justify-content: space-around;
+    background-color: red;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/cingo-pc-background.jpg);
+}
+
 @media only screen and (max-width: 768px) {
     .desktop-content {
         flex-direction: column;
@@ -48,5 +126,18 @@
     
     h1 {
         font-size: xx-large !important;
+    }
+
+    .our-pcs,
+    .our-pcs-row-one {
+        height: 70vh;
+        flex-direction: column;
+    }
+
+    .pc-viksa,
+    .pc-cingo,
+    .pc-maze,
+    .pc-astor {
+        width: 100%;
     }
 }
