@@ -22,16 +22,16 @@
             <div class="col pc-viksa">
                 <div class="prebuild-content-viksa">
                     <h4>Viktor's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 1 }, new { @class = "btn btn-primary btn-sm" })
                 </div>
-                <img src="~/Resources/H500_transparent.png" class="our-pcs-case-image"/>
+                <img src="~/Resources/h710_transparent.png" class="our-pcs-case-image"/>
             </div>
             <div class="col pc-cingo">
                 <div class="prebuild-content-cingo">
                     <h4>Nikola's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 2 }, new { @class = "btn btn-primary btn-sm" })
                 </div>
-                <img src="~/Resources/h500_white_transparentpng.png" class="our-pcs-case-image"/>
+                <img src="~/Resources/h710_black_transparent.png" class="our-pcs-case-image"/>
             </div>
         </div>
 
@@ -39,39 +39,43 @@
             <div class="col pc-maze">
                 <div class="prebuild-content-viksa">
                     <h4>Andrej's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 3 }, new { @class = "btn btn-primary btn-sm" })
                 </div>
-                <img src="~/Resources/h500_white_transparentpng.png" alt="imageplaceholder" class="our-pcs-case-image"/>
+                <img src="~/Resources/h210i_transparent.png" alt="imageplaceholder" class="our-pcs-case-image"/>
             </div>
             <div class="col pc-astor">
                 <div class="prebuild-content-viksa">
                     <h4>Astor's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "Create", "Computers", null, new { @class = "btn btn-primary btn-sm" })
+                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 4 }, new { @class = "btn btn-primary btn-sm" })
                 </div>
-                <img src="~/Resources/h500_white_transparentpng.png" alt="imageplaceholder" class="our-pcs-case-image"/>
+                <img src="~/Resources/h510_transparent.png" alt="imageplaceholder" class="our-pcs-case-image"/>
             </div>
         </div>
     </div>
-
-</div>
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="row testimonials">
+        <div class="col-md-3">
+            <h2>Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
+        <div class="col-md-3">
+            <h2>Web Hosting</h2>
+            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+        </div>
     </div>
 </div>

@@ -15,7 +15,7 @@ namespace Buildy.Controllers
 {
     public class ComputersController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Computers
         public async Task<ActionResult> Index()
@@ -341,6 +341,34 @@ namespace Buildy.Controllers
         public ActionResult RemoveCooling()
         {
             Session["Cooling"] = null;
+            return RedirectToAction("Create");
+        }
+
+        public async Task<ActionResult> GetOursComputer(int id)
+        {
+            var dbComputer = await db.Computers
+                .Include(mb => mb.Motherboard).Include(mb => mb.Motherboard.Manufacturer)
+                .Include(c => c.Cpu).Include(c => c.Cpu.Manufacturer)
+                .Include(r => r.Ram).Include(r => r.Ram.Manufacturer).Include(r => r.Ram.RamMemoryType)
+                .Include(c => c.Case).Include(c => c.Case.Manufacturer)
+                .Include(g => g.Gpu).Include(g => g.Gpu.Manufacturer)
+                .Include(s => s.Storage).Include(s => s.Storage.Manufacturer).Include(s => s.Storage.StorageType)
+                .Include(c => c.Cooling).Include(c => c.Cooling.Manufacturer).Include(c => c.Cooling.CoolingType)
+                .Include(p => p.Psu).Include(p => p.Psu.Manufacturer).Include(p => p.Psu.PsuEficency)
+                .Where(x => x.Id == id)
+                .ToListAsync();
+
+            var pc = dbComputer[0];
+
+            Session["Case"] = pc.Case;
+            Session["Cooling"] = pc.Cooling;
+            Session["Cpu"] = pc.Cpu;
+            Session["Gpu"] = pc.Gpu;
+            Session["Ram"] = pc.Ram;
+            Session["Storage"] = pc.Storage;
+            Session["Psu"] = pc.Psu;
+            Session["Mb"] = pc.Motherboard;
+
             return RedirectToAction("Create");
         }
     }
