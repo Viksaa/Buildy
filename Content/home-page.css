@@ -1,0 +1,199 @@
+﻿.home-page-container {
+    margin-left: calc(50% - 50vw);
+    width: 100vw;
+}
+
+.image-container {
+    height: 70vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url(../Resources/home-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pc-case {
+    width: 45%;
+    height: auto;
+}
+
+.desktop-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+}
+
+.btn-build {
+    margin-top: 20px;
+    font-size: 25px;
+}
+
+.desktop-content h1 {
+    font-size: 50px;
+    color: #fff;
+}
+
+.our-pcs {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.our-pcs-text {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), #000;
+    color: #fff;
+}
+
+.our-pcs-row {
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+.our-pcs-case-image {
+    width: 25%;
+    height: auto;
+}
+
+.pc-viksa,
+.pc-cingo,
+.pc-maze,
+.pc-astor {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pc-viksa {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/viksa-pc-background.jpg);
+}
+
+.pc-cingo {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/cingo-pc-background.jpg);
+}
+
+.pc-maze {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(../Resources/maze-pc-background.jpg);
+}
+
+.pc-astor {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url(../Resources/astor-pc-background.jpg);
+}
+
+.prebuild-content {
+    display: flex;
+    color: #fff;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.features {
+    height: 30vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    text-align: -webkit-center;
+    font-size: 20px;
+}
+
+.features-images {
+    width: 35%;
+    height: auto;
+}
+
+.our-work {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-top: 15px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background: url(../Resources/blue-background-our-work.jpg);
+    height: fit-content;
+    color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.our-work-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+.our-work-title {
+    margin-bottom: 25px;
+}
+
+.our-work-image {
+    height: auto;
+    width: 25%;
+}
+
+.social-media {
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons {
+    font-size: 70px;
+}
+
+.social-icon {
+    transition: all 0.5s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: translateY(-10px);
+}
+
+@media only screen and (max-width: 768px) {
+    .desktop-content {
+        flex-direction: column;
+    }
+    
+    h1 {
+        font-size: xx-large !important;
+    }
+
+    .our-pcs,
+    .our-pcs-row {
+        height: 70vh;
+        flex-direction: column;
+    }
+
+    .pc-viksa,
+    .pc-cingo,
+    .pc-maze,
+    .pc-astor {
+        width: 100%;
+    }
+    
+    .features {
+        flex-direction: column;
+        height: 70vh;
+    }
+
+    .our-work {
+        flex-direction: column;
+        font-size: 15px;
+    }
+}

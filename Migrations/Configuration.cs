@@ -1,3 +1,5 @@
+using Buildy.Models;
+
 namespace Buildy.Migrations
 {
     using Buildy.Models.PC_Components.PC_Helper_Models;
@@ -197,6 +199,12 @@ namespace Buildy.Migrations
                 new Cooling() { Id = 4, Name = "SickleFlow", ManufacturerId = 6, TypeId = 2, RGB = false, Size = 120, Speed = 2000, Price = 10, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/4187AIcuisL._SX466_.jpg" },
                 new Cooling() { Id = 5, Name = " ML120 PRO RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1600, Price = 30, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/637d55a951c6564584edaa513645859e.1600.jpg" }
                 );
+
+            context.Computers.AddOrUpdate(x => x.Id,
+                new Computer() { Id = 1, CaseId = 3, CoolingId = 5, CpuId = 9, GpuId = 5, MotherboardId = 9, PsuId = 2, RamId = 4, StorageId = 3, CoolingAmmount = 4, RamAmmount = 16, StorageAmmount = 5 },
+                new Computer() { Id = 2, CaseId = 5, CoolingId = 3, CpuId = 6, GpuId = 4, MotherboardId = 1, PsuId = 3, RamId = 5, StorageId = 4, CoolingAmmount = 5, RamAmmount = 16, StorageAmmount = 8 },
+                new Computer() { Id = 3, CaseId = 1, CoolingId = 1, CpuId = 1, GpuId = 1, MotherboardId = 1, PsuId = 1, RamId = 1, StorageId = 1, CoolingAmmount = 1, RamAmmount = 32, StorageAmmount = 9 },
+                new Computer() { Id = 4, CaseId = 2, CoolingId = 2, CpuId = 2, GpuId = 2, MotherboardId = 2, PsuId = 2, RamId = 2, StorageId = 2, CoolingAmmount = 2, RamAmmount = 64, StorageAmmount = 5 });
 
         }
     }
