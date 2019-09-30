@@ -1,6 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
     @Styles.Render("~/Content/home-page.css")
+    @Styles.Render("~/lib/font-awesome/css/font-awesome.min.css")
 }
 <div class="home-page-container">
     <div class="image-container">
@@ -52,31 +53,8 @@
             </div>
         </div>
     </div>
+
     <div class="row features">
-        @*<div class="col-md-3">
-            <h2>Getting started</h2>
-            <p>
-                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
-            </p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-3">
-            <h2>Get more libraries</h2>
-            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-3">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>
-        <div class="col-md-3">
-            <h2>Web Hosting</h2>
-            <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-            <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-        </div>*@
 
         <div class="col-md-3">
             <div class="card text-center" style="width: 18rem;">
@@ -105,11 +83,28 @@
         <div class="col-md-3">
             <div class="card text-center" style="width: 18rem;">
                 <div class="card-body">
-                    <h5 class="card-title">Special title treatment</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title"><img src="~/Resources/Best_Price_icon_transparent.png" class="features-images" /></h5>
+                    <p class="card-text">Known for our low prices</p>
                 </div>
             </div>
         </div>
+
     </div>
+    
+    <div class="our-work">
+        <div class="our-work-body">
+            <div class="our-work-title">
+                <h1>Pick parts. Check compatibility. Build PC.</h1>
+            </div>
+        
+            <div class="our-work-content">
+                <p>Buildy provides dozens of computer parts to select from, check their compatibility and build your virtual PC.
+                    It doesn't matter if you are rookie PC builder or experienced one, our software will provide you guidelines 
+                    for the PC assemble with affordable pricing</p>
+            </div>
+        </div>
+
+        <img src="~/Resources/h500_cm_case_transparent.png" class="our-work-image"/>
+    </div>
+
 </div>
