@@ -3,108 +3,122 @@
     @Styles.Render("~/Content/home-page.css")
     @Styles.Render("~/lib/font-awesome/css/font-awesome.min.css")
 }
-<div class="home-page-container">
-    <div class="image-container">
-        <div class="desktop-content">
-            <img src="~/Resources/h200_case.png" class="pc-case"/>
-            <div class="moto">
-                <h1>BUILDING PCs<br/>MADE SIMPLE</h1>
-                @Html.ActionLink("BUILD NOW", "Create", "Computers", null, new { @class="btn btn-primary btn-block btn-build"})
+    <div class="home-page-container">
+        <div class="image-container">
+            <div class="desktop-content">
+                <img src="~/Resources/h200_case.png" class="pc-case" />
+                <div class="moto">
+                    <h1>BUILDING PCs<br />MADE SIMPLE</h1>
+                    @Html.ActionLink("BUILD NOW", "Create", "Computers", null, new { @class = "btn btn-primary btn-block btn-build" })
+                </div>
+            </div>
+        </div>
+
+        <div class="row our-pcs-text">
+            Some of our PCs
+        </div>
+
+        <div class="row our-pcs">
+            <div class="row our-pcs-row-one">
+                <div class="col pc-viksa">
+                    <div class="prebuild-content-viksa">
+                        <h4>Viktor's Workstation</h4>
+                        @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 1 }, new { @class = "btn btn-primary btn-sm" })
+                    </div>
+                    <img src="~/Resources/h710_transparent.png" class="our-pcs-case-image" />
+                </div>
+                <div class="col pc-cingo">
+                    <div class="prebuild-content-cingo">
+                        <h4>Nikola's Workstation</h4>
+                        @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 2 }, new { @class = "btn btn-primary btn-sm" })
+                    </div>
+                    <img src="~/Resources/h710_black_transparent.png" class="our-pcs-case-image" />
+                </div>
+            </div>
+
+            <div class="row our-pcs-row-one">
+                <div class="col pc-maze">
+                    <div class="prebuild-content-viksa">
+                        <h4>Andrej's Workstation</h4>
+                        @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 3 }, new { @class = "btn btn-primary btn-sm" })
+                    </div>
+                    <img src="~/Resources/h210i_transparent.png" alt="imageplaceholder" class="our-pcs-case-image" />
+                </div>
+                <div class="col pc-astor">
+                    <div class="prebuild-content-viksa">
+                        <h4>Astor's Workstation</h4>
+                        @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 4 }, new { @class = "btn btn-primary btn-sm" })
+                    </div>
+                    <img src="~/Resources/h510_transparent.png" alt="imageplaceholder" class="our-pcs-case-image" />
+                </div>
+            </div>
+        </div>
+
+        <div class="row features">
+
+            <div class="col-md-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="~/Resources/warranty-icon.png" class="features-images" /></h5>
+                        <p class="card-text">3 Year Warranty Included</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="~/Resources/open24-7_transparent.png" class="features-images" /></h5>
+                        <p class="card-text">With 24/7 Live Call Support</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="~/Resources/Cashback_transparent.png" class="features-images" /></h5>
+                        <p class="card-text">A Money-Back Guarantee If Not Satisfied</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="card text-center" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><img src="~/Resources/Best_Price_icon_transparent.png" class="features-images" /></h5>
+                        <p class="card-text">Known for our low prices</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="our-work">
+            <div class="our-work-body">
+                <div class="our-work-title">
+                    <h1>Pick parts. Check compatibility. Build PC.</h1>
+                </div>
+
+                <div class="our-work-content">
+                    <p>
+                        Buildy provides dozens of computer parts to select from, check their compatibility and build your virtual PC.
+                        It doesn't matter if you are rookie PC builder or experienced one, our software will provide you guidelines
+                        for the PC assemble with affordable pricing.
+                    </p>
+                </div>
+            </div>
+
+            <img src="~/Resources/h500_cm_case_transparent.png" class="our-work-image" />
+        </div>
+
+        <div class="social-media">
+            <div class="social-text">
+                <h1>Visit us on our social media.</h1>
+            </div>
+
+            <div class="social-icons">
+                <a href=""><i class="fa fa-twitter-square social-icon" style="color: #1DA1F2;"></i></a>
+                <a href=""><i class="fa fa-facebook-square social-icon" style="color: #3C5A99;"></i></a>
+                <a href=""><i class="fa fa-linkedin-square social-icon" style="color: #0077B5;"></i></a>
+                <a href=""><i class="fa fa-github-square social-icon" style="color: #24292e;"></i></a>
             </div>
         </div>
     </div>
-    
-    <div class="row our-pcs-text">
-        Some of our PCs
-    </div>
-
-    <div class="row our-pcs">
-        <div class="row our-pcs-row-one">
-            <div class="col pc-viksa">
-                <div class="prebuild-content-viksa">
-                    <h4>Viktor's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 1 }, new { @class = "btn btn-primary btn-sm" })
-                </div>
-                <img src="~/Resources/h710_transparent.png" class="our-pcs-case-image"/>
-            </div>
-            <div class="col pc-cingo">
-                <div class="prebuild-content-cingo">
-                    <h4>Nikola's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 2 }, new { @class = "btn btn-primary btn-sm" })
-                </div>
-                <img src="~/Resources/h710_black_transparent.png" class="our-pcs-case-image"/>
-            </div>
-        </div>
-
-        <div class="row our-pcs-row-one">
-            <div class="col pc-maze">
-                <div class="prebuild-content-viksa">
-                    <h4>Andrej's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 3 }, new { @class = "btn btn-primary btn-sm" })
-                </div>
-                <img src="~/Resources/h210i_transparent.png" alt="imageplaceholder" class="our-pcs-case-image"/>
-            </div>
-            <div class="col pc-astor">
-                <div class="prebuild-content-viksa">
-                    <h4>Astor's Workstation</h4>
-                    @Html.ActionLink("Buy NOW!", "GetOursComputer", "Computers", new { id = 4 }, new { @class = "btn btn-primary btn-sm" })
-                </div>
-                <img src="~/Resources/h510_transparent.png" alt="imageplaceholder" class="our-pcs-case-image"/>
-            </div>
-        </div>
-    </div>
-
-    <div class="row features">
-
-        <div class="col-md-3">
-            <div class="card text-center" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"><img src="~/Resources/warranty-icon.png" class="features-images"/></h5>
-                    <p class="card-text">3 Year Warranty Included</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-center" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"><img src="~/Resources/open24-7_transparent.png" class="features-images"/></h5>
-                    <p class="card-text">With 24/7 Live Call Support</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-center" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"><img src="~/Resources/Cashback_transparent.png" class="features-images" /></h5>
-                    <p class="card-text">A Money-Back Guarantee If Not Satisfied</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3">
-            <div class="card text-center" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title"><img src="~/Resources/Best_Price_icon_transparent.png" class="features-images" /></h5>
-                    <p class="card-text">Known for our low prices</p>
-                </div>
-            </div>
-        </div>
-
-    </div>
-    
-    <div class="our-work">
-        <div class="our-work-body">
-            <div class="our-work-title">
-                <h1>Pick parts. Check compatibility. Build PC.</h1>
-            </div>
-        
-            <div class="our-work-content">
-                <p>Buildy provides dozens of computer parts to select from, check their compatibility and build your virtual PC.
-                    It doesn't matter if you are rookie PC builder or experienced one, our software will provide you guidelines 
-                    for the PC assemble with affordable pricing</p>
-            </div>
-        </div>
-
-        <img src="~/Resources/h500_cm_case_transparent.png" class="our-work-image"/>
-    </div>
-
-</div>
