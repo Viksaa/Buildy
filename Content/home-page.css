@@ -1,7 +1,6 @@
 ﻿.home-page-container {
     margin-left: calc(50% - 50vw);
     width: 100vw;
-    /*padding-top: 13px;*/
 }
 
 .image-container {
@@ -10,7 +9,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-blend-mode: screen multiply;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,10 +26,6 @@
     line-height: 1.2;
 }
 
-.moto {
-    color: #fff;
-}
-
 .btn-build {
     margin-top: 20px;
     font-size: 25px;
@@ -39,13 +33,13 @@
 
 .desktop-content h1 {
     font-size: 50px;
+    color: #fff;
 }
 
 .our-pcs {
     height: 50vh;
     display: flex;
     flex-direction: column;
-    flex: 1;
 }
 
 .our-pcs-text {
@@ -58,18 +52,10 @@
     color: #fff;
 }
 
-.our-pcs-row-one {
+.our-pcs-row {
     height: 50%;
-    /*background-color: red;*/
     display: flex;
-    flex: 1;
     flex-direction: row;
-}
-
-.our-pcs-row-two {
-    height: 50%;
-    /*background-color: blue;*/
-    flex: 1;
 }
 
 .our-pcs-case-image {
@@ -77,48 +63,37 @@
     height: auto;
 }
 
-.pc-viksa {
+.pc-viksa,
+.pc-cingo,
+.pc-maze,
+.pc-astor {
     height: 100%;
     width: 50%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/viksa-pc-background.jpg);
     display: flex;
-    flex: 1;
     justify-content: space-around;
+}
+
+.pc-viksa {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/viksa-pc-background.jpg);
+}
+
+.pc-cingo {
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/cingo-pc-background.jpg);
 }
 
 .pc-maze {
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.2)), url(../Resources/maze-pc-background.jpg);
-    height: 100%;
-    width: 50%;
-    display: flex;
-    justify-content: space-around;
 }
 
 .pc-astor {
-    height: 100%;
-    width: 50%;
     background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.0)), url(../Resources/astor-pc-background.jpg);
-    display: flex;
-    justify-content: space-around;
 }
 
-.prebuild-content-viksa,
-.prebuild-content-cingo {
+.prebuild-content {
     display: flex;
-    /*flex: 1;*/
     color: #fff;
     flex-direction: column;
     justify-content: center;
-}
-
-.pc-cingo {
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex: 1;
-    justify-content: space-around;
-    background-color: red;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.9)), url(../Resources/cingo-pc-background.jpg);
 }
 
 .features {
@@ -139,7 +114,6 @@
     padding-top: 15px;
     padding-bottom: 15px;
     margin-top: 15px;
-    height: 40vh;
     text-align: center;
     display: flex;
     align-items: center;
@@ -201,7 +175,7 @@
     }
 
     .our-pcs,
-    .our-pcs-row-one {
+    .our-pcs-row {
         height: 70vh;
         flex-direction: column;
     }

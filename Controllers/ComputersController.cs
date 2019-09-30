@@ -356,18 +356,16 @@ namespace Buildy.Controllers
                 .Include(c => c.Cooling).Include(c => c.Cooling.Manufacturer).Include(c => c.Cooling.CoolingType)
                 .Include(p => p.Psu).Include(p => p.Psu.Manufacturer).Include(p => p.Psu.PsuEficency)
                 .Where(x => x.Id == id)
-                .ToListAsync();
+                .FirstOrDefaultAsync();
 
-            var pc = dbComputer[0];
-
-            Session["Case"] = pc.Case;
-            Session["Cooling"] = pc.Cooling;
-            Session["Cpu"] = pc.Cpu;
-            Session["Gpu"] = pc.Gpu;
-            Session["Ram"] = pc.Ram;
-            Session["Storage"] = pc.Storage;
-            Session["Psu"] = pc.Psu;
-            Session["Mb"] = pc.Motherboard;
+            Session["Case"] = dbComputer.Case;
+            Session["Cooling"] = dbComputer.Cooling;
+            Session["Cpu"] = dbComputer.Cpu;
+            Session["Gpu"] = dbComputer.Gpu;
+            Session["Ram"] = dbComputer.Ram;
+            Session["Storage"] = dbComputer.Storage;
+            Session["Psu"] = dbComputer.Psu;
+            Session["Mb"] = dbComputer.Motherboard;
 
             return RedirectToAction("Create");
         }
