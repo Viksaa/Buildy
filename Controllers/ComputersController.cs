@@ -72,6 +72,7 @@ namespace Buildy.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Save()
         {
             return View();
@@ -79,6 +80,7 @@ namespace Buildy.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Buy()
         {
             return View();

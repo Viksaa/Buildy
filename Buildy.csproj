@@ -172,6 +172,7 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Authorization\MyAuthorization.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ComputersController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -230,6 +231,10 @@
     <Compile Include="Migrations\201909061235349_Cpu refactor.Designer.cs">
       <DependentUpon>201909061235349_Cpu refactor.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910012222263_Computer_user table.cs" />
+    <Compile Include="Migrations\201910012222263_Computer_user table.Designer.cs">
+      <DependentUpon>201910012222263_Computer_user table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -252,6 +257,7 @@
     <Compile Include="Models\PC_Components\PSU.cs" />
     <Compile Include="Models\PC_Components\RAM.cs" />
     <Compile Include="Models\PC_Components\Storage.cs" />
+    <Compile Include="Models\User_Computers.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -648,6 +654,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909061235349_Cpu refactor.resx">
       <DependentUpon>201909061235349_Cpu refactor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910012222263_Computer_user table.resx">
+      <DependentUpon>201910012222263_Computer_user table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

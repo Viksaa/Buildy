@@ -48,6 +48,7 @@ namespace Buildy.Models
         public DbSet<PSUEficency> PsuEficenciess { get; set; }
         public DbSet<Computer> Computers { get; set; }
         public DbSet<Address> Addresses { get; set; }
+        public DbSet<User_Computers> User_Computers { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
