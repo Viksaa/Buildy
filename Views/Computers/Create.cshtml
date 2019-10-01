@@ -261,7 +261,7 @@
         {
             @Html.AntiForgeryToken()
             <div class="form-group">
-                <input type="submit" class="btn btn-danger btn-block" value="Reset" />
+                <input type="submit" class="btn btn-danger btn-block" value="Reset" id="Reset" />
             </div>
         }
     </div>
@@ -297,6 +297,15 @@
                     }
                 });
             });
+
+           $("#Reset").click(function(){
+    if(confirm("Are you sure you want to reset this build?")){
+        $("#delete-button").attr("href", "query.php?ACTION=delete&ID='1'");
+    }
+    else{
+        return false;
+    }
+});
         });
     </script>
 }

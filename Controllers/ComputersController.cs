@@ -77,6 +77,21 @@ namespace Buildy.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Buy()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Reset ()
+        {
+            Session.Clear();
+            return RedirectToAction("Create");
+        }
+
         // GET: Computers/Edit/5
         public async Task<ActionResult> Edit(int? id)
         {
