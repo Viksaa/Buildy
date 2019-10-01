@@ -76,8 +76,9 @@ namespace Buildy.Controllers
         [Authorize]
         public ActionResult Save()
         {
-            var user = User.Identity.GetUserId();
-            var nest = db.Users.Find(user);
+            var pc_name = Request.Form.Get("Name");
+            var userId = User.Identity.GetUserId();
+            var user = db.Users.Find(userId);
             
             Computer newPc = new Computer() {
                 PsuId = ((PSU)Session["Psu"]).Id ,
@@ -88,12 +89,12 @@ namespace Buildy.Controllers
                 CoolingId = ((Cooling)Session["Cooling"]).Id,
                 RamId = ((RAM)Session["Ram"]).Id,
                 StorageId = ((Storage)Session["Storage"]).Id,
-                Name = "Nesto"
+                Name = pc_name
             };
             db.Computers.Add(newPc);
             db.SaveChanges();
 
-            nest.Computers.Add(newPc);
+            user.Computers.Add(newPc);
             db.SaveChanges();
             Session.Clear();
 
