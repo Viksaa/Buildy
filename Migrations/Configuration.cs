@@ -228,7 +228,22 @@ namespace Buildy.Migrations
                 new RAM() { Id = 2, Name = "Vengeance LPX", MemoryTypeId = 2, ManufacturerId = 19, Frequency = 3000, Size = 16, Timing = "16-20-20-38", Price = 73, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/897d32aa11f4462641daa6c62d1322f5.1600.jpg" },
                 new RAM() { Id = 3, Name = "Ripjaws V Series ", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 2400, Size = 16, Timing = "none", Price = 66, ImageURL = "http://ecx.images-amazon.com/images/I/41XcDGwMsBL.jpg" },
                 new RAM() { Id = 4, Name = "Ripjaws V", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 3600, Size = 16, Timing = "19-20-20-40", Price = 78, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/72816e43251cd35c4b3f598eb8fc16e0.1600.jpg" },
-                new RAM() { Id = 5, Name = "HyperX Predator", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2666, Size = 8, Timing = "none", Price = 43, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/f25ee4f0e1776a3d15c2286d35feeb8c.1600.jpg" }
+                new RAM() { Id = 5, Name = "HyperX Predator", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2666, Size = 8, Timing = "none", Price = 43, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/f25ee4f0e1776a3d15c2286d35feeb8c.1600.jpg" },
+                new RAM() { Id = 6, Name = "HyperX Fury", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2666, Size = 8, Timing = "none", Price = 40, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/14c2a7f4a3a06e1d0e81f25fb7c2a42a.1600.jpg" },
+                new RAM() { Id = 7, Name = "HyperX Fury", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 3200, Size = 8, Timing = "none", Price = 55, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/14c2a7f4a3a06e1d0e81f25fb7c2a42a.1600.jpg" },
+                new RAM() { Id = 8, Name = "Vengeance", MemoryTypeId = 2, ManufacturerId = 19, Frequency = 1866, Size = 8, Timing = "none", Price = 35, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/6a3b0f143de7182ae0c995ac4b357d19.med.1600.jpg" },
+                new RAM() { Id = 9, Name = "HyperX Fury", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 3200, Size = 16, Timing = "none", Price = 96, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/d39bd7cede4c3af6acc60c517645ab7c.1600.jpg" },
+                new RAM() { Id = 10, Name = "HyperX Fury", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2400, Size = 8, Timing = "none", Price = 40, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/14c2a7f4a3a06e1d0e81f25fb7c2a42a.1600.jpg" },
+                new RAM() { Id = 11, Name = "Vengeance LPX", MemoryTypeId = 2, ManufacturerId = 19, Frequency = 3000, Size = 32, Timing = "none", Price = 170, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/7c04b120a9d93500b574655bd99b93aa.1600.jpg" },
+                new RAM() { Id = 12, Name = "Ripjaws V", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 3600, Size = 8, Timing = "none", Price = 48, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/c0fe82c5c039e038cd14a5833293d591.1600.jpg" },
+                new RAM() { Id = 13, Name = "32 GB", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2133, Size = 32, Timing = "none", Price = 700, ImageURL = "http://ecx.images-amazon.com/images/I/41mMZ13YGfL.jpg" },
+                new RAM() { Id = 14, Name = "Vengeance LPX 8 GB", MemoryTypeId = 2, ManufacturerId = 19, Frequency = 2666, Size = 8, Timing = "none", Price = 40, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/9b6014a1b219eb2ba07ec3d12c0c639f.1600.jpg" },
+                new RAM() { Id = 15, Name = "Ripjaws V", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 3600, Size = 16, Timing = "none", Price = 80, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/72816e43251cd35c4b3f598eb8fc16e0.1600.jpg" },
+                new RAM() { Id = 16, Name = "HyperX Fury Black", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 2133, Size = 8, Timing = "none", Price = 80, ImageURL = "http://ecx.images-amazon.com/images/I/41Vkj6Q5vtL.jpg" },
+                new RAM() { Id = 17, Name = "HyperX Fury Blue", MemoryTypeId = 2, ManufacturerId = 10, Frequency = 1600, Size = 8, Timing = "none", Price = 30, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/420350537fa9e0e49b1e491fe9c4810d.1600.jpg" },
+                new RAM() { Id = 18, Name = "Ripjaws V Series 8 GB", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 2400, Size = 8, Timing = "none", Price = 33, ImageURL = "http://ecx.images-amazon.com/images/I/41UyfTQGqiL.jpg" },
+                new RAM() { Id = 19, Name = "Aegis", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 2666, Size = 16, Timing = "none", Price = 47, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/0c6edb82799a2627d1ea10e7cba3abfb.1600.jpg" },
+                new RAM() { Id = 20, Name = "Aegis", MemoryTypeId = 2, ManufacturerId = 12, Frequency = 2666, Size = 8, Timing = "none", Price = 38, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/cecd6ed1bee7da70050efd4881c95968.1600.jpg" }
                 );
 
             context.Storages.AddOrUpdate(x => x.Id,
@@ -237,6 +252,7 @@ namespace Buildy.Migrations
                 new Storage() { Id = 3, Name = "860 Evo", ManufacturerId = 9, Capacity = 500, ReadingSpeed = 500, WritingSpeed = 420, TypeId = 2, Price = 75, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/41JX1N9gi1L.jpg" },
                 new Storage() { Id = 4, Name = "970 Evo", ManufacturerId = 9, Capacity = 500, ReadingSpeed = 900, WritingSpeed = 750, TypeId = 3, Price = 90, ImageURL = "https://images-eu.ssl-images-amazon.com/images/I/41x8zIrgC3L.jpg" },
                 new Storage() { Id = 5, Name = "A400", ManufacturerId = 10, Capacity = 240, ReadingSpeed = 400, WritingSpeed = 300, TypeId = 2, Price = 32, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/97e2bd828644767c8a80b71f8cb14743.1600.jpg" }
+
                 );
 
             context.Coolings.AddOrUpdate(x => x.Id,
