@@ -237,15 +237,36 @@
         </tr>
     </tbody>
 </table>
-@using (Html.BeginForm("Save", "Computers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Save" />
-        </div>
+<div class="row">
+    <div class="col-md-4">
+        @using (Html.BeginForm("Buy", "Computers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary btn-block" value="Buy" />
+            </div>
+        }
     </div>
-}
+    <div class="col-md-4">
+        @using (Html.BeginForm("Save", "Computers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <input type="submit" class="btn btn-success btn-block" value="Save" />
+            </div>
+        }
+    </div>
+    <div class="col-md-4">
+        @using (Html.BeginForm("Reset", "Computers", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <input type="submit" class="btn btn-danger btn-block" value="Reset" />
+            </div>
+        }
+    </div>
+</div>
+
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
