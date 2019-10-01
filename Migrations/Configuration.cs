@@ -37,7 +37,8 @@ namespace Buildy.Migrations
               new Manufacturer() { Id = 16, Name = "Sharkoon" },
               new Manufacturer() { Id = 17, Name = "A-Data" },
               new Manufacturer() { Id = 18, Name = "Asus" },
-              new Manufacturer() { Id = 19, Name = "Corsair" }
+              new Manufacturer() { Id = 19, Name = "Corsair" },
+              new Manufacturer() { Id = 20, Name = "Noctua" }
                );
 
             context.MotherboardTypes.AddOrUpdate(x => x.Id,
@@ -272,9 +273,19 @@ namespace Buildy.Migrations
             context.Coolings.AddOrUpdate(x => x.Id,
                 new Cooling() { Id = 1 , Name = "AER RGB" , ManufacturerId = 8 , TypeId = 2 , RGB = true , Size = 120 , Speed = 1500 , Price= 28 , ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/b19d6a6fea838158bcca998fcae5e6b0.1600.jpg" },
                 new Cooling() { Id = 2, Name = "LL120 RGB LED", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1500, Price = 30, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/4e2045757086fab56d2420d84fcf9619.1600.jpg" },
-                new Cooling() { Id = 3, Name = " LL140 RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 140, Speed = 1300, Price = 40, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/af0e3ae9695b1702e6e1b5d4f6200db6.1600.jpg" },
+                new Cooling() { Id = 3, Name = "LL140 RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 140, Speed = 1300, Price = 40, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/af0e3ae9695b1702e6e1b5d4f6200db6.1600.jpg" },
                 new Cooling() { Id = 4, Name = "SickleFlow", ManufacturerId = 6, TypeId = 2, RGB = false, Size = 120, Speed = 2000, Price = 10, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/4187AIcuisL._SX466_.jpg" },
-                new Cooling() { Id = 5, Name = " ML120 PRO RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1600, Price = 30, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/637d55a951c6564584edaa513645859e.1600.jpg" }
+                new Cooling() { Id = 5, Name = "ML120 PRO RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1600, Price = 30, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/637d55a951c6564584edaa513645859e.1600.jpg" },
+                new Cooling() { Id = 6, Name = "ML120 PRO", ManufacturerId = 19, TypeId = 2, RGB = false, Size = 120, Speed = 1600, Price = 24, ImageURL = "http://ecx.images-amazon.com/images/I/51cneTiL46L.jpg" },
+                new Cooling() { Id = 7, Name = "iCUE SP120", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1400, Price = 25, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/a26d9e55f89e849dbb15cbcb5e327e72.1600.jpg" },
+                new Cooling() { Id = 8, Name = "NF-A14 PWM", ManufacturerId = 20, TypeId = 2, RGB = false, Size = 140, Speed = 1500, Price = 20, ImageURL = "http://ecx.images-amazon.com/images/I/51uz3Oi-I8L.jpg" },
+                new Cooling() { Id = 9, Name = "NF-F12 PWM", ManufacturerId = 20, TypeId = 2, RGB = false, Size = 120, Speed = 1500, Price = 20, ImageURL = "http://ecx.images-amazon.com/images/I/51u748R1j1L.jpg" },
+                new Cooling() { Id = 10, Name = "NF-P12 redux", ManufacturerId = 20, TypeId = 2, RGB = false, Size = 140, Speed = 1700, Price = 13, ImageURL = "https://images-na.ssl-images-amazon.com/images/I/513cdf4%2B-SL.jpg" },
+                new Cooling() { Id = 11, Name = "ML140 PRO", ManufacturerId = 19, TypeId = 2, RGB = false, Size = 140, Speed = 2000, Price = 25, ImageURL = "http://ecx.images-amazon.com/images/I/514BYMyIhbL.jpg" },
+                new Cooling() { Id = 12, Name = "ML120 PRO LED", ManufacturerId = 19, TypeId = 2, RGB = false, Size = 120, Speed = 1700, Price = 28, ImageURL = "http://ecx.images-amazon.com/images/I/51Iktd3q0jL.jpg" },
+                new Cooling() { Id = 13, Name = "ML120 PRO LED", ManufacturerId = 6, TypeId = 2, RGB = true, Size = 140, Speed = 1500, Price = 27, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/ae67a9e317a6e28209c2f276f2609bd4.1600.jpg" },
+                new Cooling() { Id = 14, Name = "SP120 RGB", ManufacturerId = 19, TypeId = 2, RGB = true, Size = 120, Speed = 1400, Price = 17, ImageURL = "https://cdn.pcpartpicker.com/static/forever/images/product/204befc450a5aa5cc5d2f9b980481d9f.1600.jpg" },
+                new Cooling() { Id = 15, Name = "NF-R8 redux", ManufacturerId = 20, TypeId = 2, RGB = false, Size = 80, Speed = 1800, Price = 9, ImageURL = "http://ecx.images-amazon.com/images/I/51IUhpueJWL.jpg" }
                 );
 
             context.Computers.AddOrUpdate(x => x.Id,
