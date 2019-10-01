@@ -13,6 +13,8 @@ namespace Buildy.Models
         [Key]
         public int Id { get; set; }
 
+        public string Name { get; set; }
+
         public int CaseId { get; set; }
 
         [ForeignKey("CaseId")]
@@ -58,6 +60,8 @@ namespace Buildy.Models
         public Storage Storage { get; set; }
 
         public int StorageAmmount { get; set; }
+
+        public virtual ICollection<ApplicationUser> Users { get; set; }
 
     }
 }

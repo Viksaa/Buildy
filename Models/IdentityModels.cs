@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.Entity;
 using System.Security.Claims;
@@ -19,6 +20,7 @@ namespace Buildy.Models
         public Address Address { get; set; }
         public bool Gender { get; set; }
         public DateTime DateOfBirth { get; set; }
+        public virtual ICollection<Computer> Computers { get; set; }
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -48,7 +50,6 @@ namespace Buildy.Models
         public DbSet<PSUEficency> PsuEficenciess { get; set; }
         public DbSet<Computer> Computers { get; set; }
         public DbSet<Address> Addresses { get; set; }
-        public DbSet<User_Computers> User_Computers { get; set; }
 
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)

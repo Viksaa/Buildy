@@ -10,6 +10,7 @@ using System.Web.Mvc;
 using Buildy.Models;
 using Buildy.Models.PC_Components;
 using Buildy.Filters;
+using Microsoft.AspNet.Identity;
 
 namespace Buildy.Controllers
 {
@@ -75,7 +76,28 @@ namespace Buildy.Controllers
         [Authorize]
         public ActionResult Save()
         {
-            return View();
+            var user = User.Identity.GetUserId();
+            var nest = db.Users.Find(user);
+            
+            Computer newPc = new Computer() {
+                PsuId = ((PSU)Session["Psu"]).Id ,
+                CpuId = ((CPU)Session["Cpu"]).Id ,
+                GpuId = ((GPU)Session["Gpu"]).Id,
+                CaseId = ((Case)Session["Case"]).Id,
+                MotherboardId = ((Motherboard)Session["Mb"]).Id,
+                CoolingId = ((Cooling)Session["Cooling"]).Id,
+                RamId = ((RAM)Session["Ram"]).Id,
+                StorageId = ((Storage)Session["Storage"]).Id,
+                Name = "Nesto"
+            };
+            db.Computers.Add(newPc);
+            db.SaveChanges();
+
+            nest.Computers.Add(newPc);
+            db.SaveChanges();
+            Session.Clear();
+
+            return RedirectToAction("Index","Home");
         }
 
         [HttpPost]
