@@ -7,11 +7,7 @@ namespace Buildy.Migrations
     {
         public override void Up()
         {
-            DropForeignKey("dbo.User_Computers", "ComputerId", "dbo.Computers");
-            DropForeignKey("dbo.User_Computers", "UserId", "dbo.AspNetUsers");
-            DropIndex("dbo.User_Computers", new[] { "ComputerId" });
-            DropIndex("dbo.User_Computers", new[] { "UserId" });
-            DropTable("dbo.User_Computers");
+            
         }
         
         public override void Down()

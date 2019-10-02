@@ -11,15 +11,15 @@ namespace Buildy.Migrations
                 "dbo.Computers",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
-                        CaseId = c.Int(nullable: false),
-                        CoolingId = c.Int(nullable: false),
-                        CpuId = c.Int(nullable: false),
-                        GpuId = c.Int(nullable: false),
-                        MotherboardId = c.Int(nullable: false),
-                        PsuId = c.Int(nullable: false),
-                        RamId = c.Int(nullable: false),
-                        StorageId = c.Int(nullable: false),
+                        Id = c.Int(nullable: true, identity: true),
+                        CaseId = c.Int(nullable: true),
+                        CoolingId = c.Int(nullable: true),
+                        CpuId = c.Int(nullable: true),
+                        GpuId = c.Int(nullable: true),
+                        MotherboardId = c.Int(nullable: true),
+                        PsuId = c.Int(nullable: true),
+                        RamId = c.Int(nullable: true),
+                        StorageId = c.Int(nullable: true),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Cases", t => t.CaseId, cascadeDelete: false)

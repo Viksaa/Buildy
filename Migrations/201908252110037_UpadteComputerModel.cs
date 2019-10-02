@@ -7,9 +7,9 @@ namespace Buildy.Migrations
     {
         public override void Up()
         {
-            AddColumn("dbo.Computers", "CoolingAmmount", c => c.Int(nullable: false));
-            AddColumn("dbo.Computers", "RamAmmount", c => c.Int(nullable: false));
-            AddColumn("dbo.Computers", "StorageAmmount", c => c.Int(nullable: false));
+            AddColumn("dbo.Computers", "CoolingAmmount", c => c.Int(nullable: true));
+            AddColumn("dbo.Computers", "RamAmmount", c => c.Int(nullable: true));
+            AddColumn("dbo.Computers", "StorageAmmount", c => c.Int(nullable: true));
         }
         
         public override void Down()
