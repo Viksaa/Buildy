@@ -95,7 +95,7 @@
                     <h4 class="card-title">@item.Name</h4>
                     <p class="card-text">Edit or view the computer.</p>
                     @Html.ActionLink("Edit", "Create", "Computers", new { id = item.Id }, new { @class = "btn btn-success" })
-                    @Html.ActionLink("Delete", "DeletePcFromSaved", "Manage", new { id = item.Id }, new { @class = "btn btn-danger" })
+                    @Html.ActionLink("Delete", "DeletePcFromSaved", "Manage", new { id = item.Id }, new { @class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this saved computer ?')"  })
                 </div>
             </div>
         </div>
