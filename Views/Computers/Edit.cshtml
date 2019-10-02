@@ -1,4 +1,5 @@
 ﻿@model Buildy.Models.Computer
+@using Buildy.Models.PC_Components
 
 @{
     ViewBag.Title = "Edit";
@@ -8,116 +9,229 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Computer</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.Id)
+    <table id="PcTable" class="table">
+        <thead>
+            <tr>
+                <th>Part</th>
+                <th>Selected Part</th>
+                <th>Price</th>
+                <th>Selection</th>
+            </tr>
+        </thead>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CaseId, "CaseId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CaseId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CaseId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+        <tbody>
+            <tr>
+                <td>CPU</td>
+                <td>
+                    @{
+                        var cpu = "";
+                        var cpuPrice = "";
+                        if (Session["Cpu"] != null)
+                        {
+                            var temp = (CPU)Session["Cpu"];
+                            cpu = temp.Manufacturer.Name + " " + temp.Name;
+                            cpuPrice = "$" + temp.Price.ToString();
+                        }
+                    }
+                    <a href="/computers">@cpu</a>
+                </td>
+                <td>@cpuPrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddCpu", "Computers", new { @class = "btn btn-success" })
+                </td>
+            </tr>
+            <tr>
+                <td>Motherboard</td>
+                <td>
+                    @{
+                        var mb = "";
+                        var mbPrice = "";
+                        if (Session["Mb"] != null)
+                        {
+                            var tmp = (Motherboard)Session["Mb"];
+                            mb = tmp.Manufacturer.Name + " " + tmp.Name;
+                            mbPrice = "$" + tmp.Price.ToString();
+                        }
+                    }
+                    <a href="/computers">@mb</a>
+                </td>
+                <td>@mbPrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddMotherboard", "Computers", new { @class = "btn btn-success" })
+                </td>
+            </tr>
+            <tr>
+                <td>Memory</td>
+                <td>
+                    @{
+                        var ram = "";
+                        var ramPrice = "";
+                        if (Session["Ram"] != null)
+                        {
+                            var tmp = (RAM)Session["Ram"];
+                            ram = tmp.Manufacturer.Name + " " + tmp.Name;
+                            ramPrice = "$" + tmp.Price.ToString();
+                        }
+                        <a href="/computers">@ram</a>
+                    }
+                </td>
+                <td>@ramPrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddRam", "Computers", new { @class = "btn btn-success" })
+                </td>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CoolingId, "CoolingId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CoolingId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CoolingId, "", new { @class = "text-danger" })
-            </div>
-        </div>
+            </tr>
+            <tr>
+                <td>GPU</td>
+                <td>
+                    @{
+                        var Gpu = "";
+                        var gpuPrice = "";
+                        if (Session["Gpu"] != null)
+                        {
+                            var tmp = (GPU)Session["Gpu"];
+                            Gpu = tmp.Manufacturer.Name + " " + tmp.Name;
+                            gpuPrice = "$" + tmp.Price.ToString();
+                        }
+                        <a href="/computers">@Gpu</a>
+                    }
+                </td>
+                <td>@gpuPrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddGpu", "Computers", new { @class = "btn btn-success" })
+                </td>
+            </tr>
+            <tr>
+                <td>Case</td>
+                <td>
+                    @{
+                        var Case = "";
+                        var casePrice = "";
+                        if (Session["Case"] != null)
+                        {
+                            var tmp = (Case)Session["Case"];
+                            Case = tmp.Manufacturer.Name + " " + tmp.Name;
+                            casePrice = "$" + tmp.Price.ToString();
+                        }
+                        <a href="/computers">@Case</a>
+                    }
+                </td>
+                <td>@casePrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddCase", "Computers", new { @class = "btn btn-success" })
+                </td>
+            </tr>
+            <tr>
+                <td>Storage</td>
+                <td>
+                    @{
+                        var storage = "";
+                        var storagePrice = "";
+                        if (Session["Storage"] != null)
+                        {
+                            var tmp = (Storage)Session["Storage"];
+                            storage = tmp.Manufacturer.Name + " " + tmp.Name;
+                            storagePrice = "$" + tmp.Price.ToString();
+                        }
+                        <a href="/computers">@storage</a>
+                    }
+                </td>
+                <td>@storagePrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddStorage", "Computers", new { @class = "btn btn-success" })
+                </td>
+            </tr>
+            <tr>
+                <td>Power Supply</td>
+                <td>
+                    @{
+                        var Psu = "";
+                        var psuPrice = "";
+                        if (Session["Psu"] != null)
+                        {
+                            var tmp = (PSU)Session["Psu"];
+                            Psu = tmp.Manufacturer.Name + " " + tmp.Name;
+                            psuPrice = "$" + tmp.Price.ToString();
+                        }
+                        <a href="/computers">@Psu</a>
+                    }
+                </td>
+                <td>@psuPrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddPsu", "Computers", new { @class = "btn btn-success" })
+                </td>
+            </tr>
+            <tr>
+                <td>Cooling</td>
+                <td>
+                    @{
+                        var cooling = "";
+                        var coolingPrice = "";
+                        if (Session["Cooling"] != null)
+                        {
+                            var tmp = (Cooling)Session["Cooling"];
+                            cooling = tmp.Manufacturer.Name + " " + tmp.Name;
+                            coolingPrice = "$" + tmp.Price.ToString();
+                        }
+                        <a href="/computers">@cooling</a>
+                    }
+                </td>
+                <td>@coolingPrice</td>
+                <td>
+                    @Html.ActionLink("Edit", "AddCooling", "Computers", new { @class = "btn btn-success" })
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.CoolingAmmount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.CoolingAmmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.CoolingAmmount, "", new { @class = "text-danger" })
+    <div class="col-md-4">
+        @using (Html.BeginForm("Edit", "Computers", new { id = ViewBag.Id } ,FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group">
+                <input type="submit" class="btn btn-success btn-block" value="Save" id="Save" />
             </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.CpuId, "CpuId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("CpuId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.CpuId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.GpuId, "GpuId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("GpuId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.GpuId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.MotherboardId, "MotherboardId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("MotherboardId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.MotherboardId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.PsuId, "PsuId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("PsuId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.PsuId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RamId, "RamId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("RamId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.RamId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.RamAmmount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.RamAmmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.RamAmmount, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.StorageId, "StorageId", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("StorageId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.StorageId, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.StorageAmmount, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.StorageAmmount, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.StorageAmmount, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
-            </div>
-        </div>
+        }
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    <script>
+        $(document).ready(function () {
+            $(".btn-delete").click(function (event) {
+                event.preventDefault();
+                $('<div title="Confirm Box"></div>').dialog({
+                    open: function (event, ui) {
+                        $(this).html("Yes or No question?");
+                    },
+                    close: function () {
+                        $(this).remove();
+                    },
+                    resizable: false,
+                    height: 140,
+                    modal: true,
+                    buttons: {
+                        'Yes': function () {
+                            $(this).dialog('close');
+                            $.post('url/theValueYouWantToPass');
+
+                        },
+                        'No': function () {
+                            $(this).dialog('close');
+                            $.post('url/theOtherValueYouWantToPAss');
+                        }
+                    }
+                });
+            });
+
+            $("#Reset").click(function () {
+                if (confirm("Are you sure you want to reset this build?")) {
+                    $("#delete-button").attr("href", "query.php?ACTION=delete&ID='1'");
+                }
+                else {
+                    return false;
+                }
+            });
+        });
+    </script>
 }

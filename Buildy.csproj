@@ -246,6 +246,10 @@
     <Compile Include="Migrations\201910022145175_Computer nullable fields.Designer.cs">
       <DependentUpon>201910022145175_Computer nullable fields.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910022250171_Pc validation.cs" />
+    <Compile Include="Migrations\201910022250171_Pc validation.Designer.cs">
+      <DependentUpon>201910022250171_Pc validation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -676,6 +680,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910022145175_Computer nullable fields.resx">
       <DependentUpon>201910022145175_Computer nullable fields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910022250171_Pc validation.resx">
+      <DependentUpon>201910022250171_Pc validation.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

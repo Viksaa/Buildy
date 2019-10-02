@@ -21,23 +21,7 @@ namespace Buildy.Controllers
         // GET: Computers
         public async Task<ActionResult> Index()
         {
-            var computers = db.Computers.Include(c => c.Case).Include(c => c.Cooling).Include(c => c.Cpu).Include(c => c.Gpu).Include(c => c.Motherboard).Include(c => c.Psu).Include(c => c.Ram).Include(c => c.Storage);
-            return View(await computers.ToListAsync());
-        }
-
-        // GET: Computers/Details/5
-        public async Task<ActionResult> Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Computer computer = await db.Computers.FindAsync(id);
-            if (computer == null)
-            {
-                return HttpNotFound();
-            }
-            return View(computer);
+            return View("Create");
         }
 
         // GET: Computers/Create
@@ -125,7 +109,7 @@ namespace Buildy.Controllers
             }
             if (Session["Cooling"] != null)
             {
-                newPc.PsuId = ((Cooling)Session["Cooling"]).Id;
+                newPc.CoolingId = ((Cooling)Session["Cooling"]).Id;
             }
             else
             {
@@ -133,7 +117,7 @@ namespace Buildy.Controllers
             }
             if (Session["Ram"] != null)
             {
-                newPc.PsuId = ((RAM)Session["Ram"]).Id;
+                newPc.RamId = ((RAM)Session["Ram"]).Id;
             }
             else
             {
@@ -175,26 +159,39 @@ namespace Buildy.Controllers
         }
 
         // GET: Computers/Edit/5
+        [Authorize]
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Computer computer = await db.Computers.FindAsync(id);
+            Computer computer = await db.Computers.
+                Include(mb => mb.Motherboard)
+                .Include(mb => mb.Motherboard.Manufacturer)
+                .Include(c => c.Cpu).Include(c => c.Cpu.Manufacturer)
+                .Include(r => r.Ram).Include(r => r.Ram.Manufacturer).Include(r => r.Ram.RamMemoryType)
+                .Include(c => c.Case).Include(c => c.Case.Manufacturer)
+                .Include(g => g.Gpu).Include(g => g.Gpu.Manufacturer)
+                .Include(s => s.Storage).Include(s => s.Storage.Manufacturer).Include(s => s.Storage.StorageType)
+                .Include(c => c.Cooling).Include(c => c.Cooling.Manufacturer).Include(c => c.Cooling.CoolingType)
+                .Include(p => p.Psu).Include(p => p.Psu.Manufacturer).Include(p => p.Psu.PsuEficency)
+                .Where(x => x.Id == id)
+                .FirstOrDefaultAsync();
             if (computer == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.CaseId = new SelectList(db.Cases, "Id", "Name", computer.CaseId);
-            ViewBag.CoolingId = new SelectList(db.Coolings, "Id", "Name", computer.CoolingId);
-            ViewBag.CpuId = new SelectList(db.Cpus, "Id", "Name", computer.CpuId);
-            ViewBag.GpuId = new SelectList(db.Gpus, "Id", "Name", computer.GpuId);
-            ViewBag.MotherboardId = new SelectList(db.Motherboards, "Id", "Name", computer.MotherboardId);
-            ViewBag.PsuId = new SelectList(db.Psus, "Id", "Name", computer.PsuId);
-            ViewBag.RamId = new SelectList(db.Rams, "Id", "Name", computer.RamId);
-            ViewBag.StorageId = new SelectList(db.Storages, "Id", "Name", computer.StorageId);
-            return View(computer);
+            Session["Case"] = computer.Case;
+            Session["Cooling"] = computer.Cooling;
+            Session["Cpu"] = computer.Cpu;
+            Session["Gpu"] = computer.Gpu;
+            Session["Ram"] = computer.Ram;
+            Session["Storage"] = computer.Storage;
+            Session["Psu"] = computer.Psu;
+            Session["Mb"] = computer.Motherboard;
+            ViewBag.id = id;
+            return View();
         }
 
         // POST: Computers/Edit/5
@@ -202,23 +199,82 @@ namespace Buildy.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,CaseId,CoolingId,CoolingAmmount,CpuId,GpuId,MotherboardId,PsuId,RamId,RamAmmount,StorageId,StorageAmmount")] Computer computer)
+        [Authorize]
+        public async Task<ActionResult> Edit(int id)
         {
-            if (ModelState.IsValid)
-            {
-                db.Entry(computer).State = EntityState.Modified;
+                Computer newPc = db.Computers.Find(id);
+                if (Session["Psu"] != null)
+                {
+                    newPc.PsuId = ((PSU)Session["Psu"]).Id;
+                }
+                else
+                {
+                    newPc.PsuId = null;
+                }
+                if (Session["Cpu"] != null)
+                {
+                    newPc.CpuId = ((CPU)Session["Cpu"]).Id;
+                }
+                else
+                {
+                    newPc.CpuId = null;
+                }
+                if (Session["Gpu"] != null)
+                {
+                    newPc.GpuId = ((GPU)Session["Gpu"]).Id;
+                }
+                else
+                {
+                    newPc.GpuId = null;
+                }
+                if (Session["Case"] != null)
+                {
+                    newPc.CaseId = ((Case)Session["Case"]).Id;
+                }
+                else
+                {
+                    newPc.CaseId = null;
+                }
+                if (Session["Mb"] != null)
+                {
+                    newPc.MotherboardId = ((Motherboard)Session["Mb"]).Id;
+                }
+                else
+                {
+                    newPc.MotherboardId = null;
+                }
+                if (Session["Cooling"] != null)
+                {
+                    newPc.PsuId = ((Cooling)Session["Cooling"]).Id;
+                }
+                else
+                {
+                    newPc.CoolingId = null;
+                }
+                if (Session["Ram"] != null)
+                {
+                    newPc.PsuId = ((RAM)Session["Ram"]).Id;
+                }
+                else
+                {
+                    newPc.RamId = null;
+                }
+                if (Session["Storage"] != null)
+                {
+                    newPc.StorageId = ((Storage)Session["Storage"]).Id;
+                }
+                else
+                {
+                    newPc.StorageId = null;
+                }
+                 newPc.CoolingAmmount = 1;
+                 newPc.StorageAmmount = 1;
+                 newPc.RamAmmount = 1;
+                db.Entry(newPc).State = EntityState.Modified;
                 await db.SaveChangesAsync();
+                Session.Clear();
                 return RedirectToAction("Index");
-            }
-            ViewBag.CaseId = new SelectList(db.Cases, "Id", "Name", computer.CaseId);
-            ViewBag.CoolingId = new SelectList(db.Coolings, "Id", "Name", computer.CoolingId);
-            ViewBag.CpuId = new SelectList(db.Cpus, "Id", "Name", computer.CpuId);
-            ViewBag.GpuId = new SelectList(db.Gpus, "Id", "Name", computer.GpuId);
-            ViewBag.MotherboardId = new SelectList(db.Motherboards, "Id", "Name", computer.MotherboardId);
-            ViewBag.PsuId = new SelectList(db.Psus, "Id", "Name", computer.PsuId);
-            ViewBag.RamId = new SelectList(db.Rams, "Id", "Name", computer.RamId);
-            ViewBag.StorageId = new SelectList(db.Storages, "Id", "Name", computer.StorageId);
-            return View(computer);
+           
         }
 
         // GET: Computers/Delete/5

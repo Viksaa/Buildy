@@ -289,10 +289,10 @@ namespace Buildy.Migrations
                 );
 
             context.Computers.AddOrUpdate(x => x.Id,
-                new Computer() { Id = 1, CaseId = 3, CoolingId = 5, CpuId = 9, GpuId = 5, MotherboardId = 9, PsuId = 2, RamId = 4, StorageId = 3, CoolingAmmount = 4, RamAmmount = 16, StorageAmmount = 5 },
-                new Computer() { Id = 2, CaseId = 5, CoolingId = 3, CpuId = 6, GpuId = 4, MotherboardId = 1, PsuId = 3, RamId = 5, StorageId = 4, CoolingAmmount = 5, RamAmmount = 16, StorageAmmount = 8 },
-                new Computer() { Id = 3, CaseId = 1, CoolingId = 1, CpuId = 1, GpuId = 1, MotherboardId = 1, PsuId = 1, RamId = 1, StorageId = 1, CoolingAmmount = 1, RamAmmount = 32, StorageAmmount = 9 },
-                new Computer() { Id = 4, CaseId = 2, CoolingId = 2, CpuId = 2, GpuId = 2, MotherboardId = 2, PsuId = 2, RamId = 2, StorageId = 2, CoolingAmmount = 2, RamAmmount = 64, StorageAmmount = 5 });
+                new Computer() { Id = 1, CaseId = 3, CoolingId = 5, CpuId = 9, GpuId = 5, MotherboardId = 9, PsuId = 2, RamId = 4, StorageId = 3, CoolingAmmount = 4, RamAmmount = 16, StorageAmmount = 5 , Name = "ViksaPC"},
+                new Computer() { Id = 2, CaseId = 5, CoolingId = 3, CpuId = 6, GpuId = 4, MotherboardId = 1, PsuId = 3, RamId = 5, StorageId = 4, CoolingAmmount = 5, RamAmmount = 16, StorageAmmount = 8 , Name = "ChingoPC" },
+                new Computer() { Id = 3, CaseId = 1, CoolingId = 1, CpuId = 1, GpuId = 1, MotherboardId = 1, PsuId = 1, RamId = 1, StorageId = 1, CoolingAmmount = 1, RamAmmount = 32, StorageAmmount = 9 , Name = "MAzhepc" },
+                new Computer() { Id = 4, CaseId = 2, CoolingId = 2, CpuId = 2, GpuId = 2, MotherboardId = 2, PsuId = 2, RamId = 2, StorageId = 2, CoolingAmmount = 2, RamAmmount = 64, StorageAmmount = 5 , Name = "AStorPc" });
         }
     }
 }
