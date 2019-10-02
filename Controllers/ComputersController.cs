@@ -81,16 +81,73 @@ namespace Buildy.Controllers
             var user = db.Users.Find(userId);
             
             Computer newPc = new Computer() {
-                PsuId = ((PSU)Session["Psu"]).Id ,
-                CpuId = ((CPU)Session["Cpu"]).Id ,
-                GpuId = ((GPU)Session["Gpu"]).Id,
-                CaseId = ((Case)Session["Case"]).Id,
-                MotherboardId = ((Motherboard)Session["Mb"]).Id,
-                CoolingId = ((Cooling)Session["Cooling"]).Id,
-                RamId = ((RAM)Session["Ram"]).Id,
-                StorageId = ((Storage)Session["Storage"]).Id,
                 Name = pc_name
             };
+            if (Session["Psu"] != null)
+            {
+                newPc.PsuId = ((PSU)Session["Psu"]).Id;
+            }
+            else
+            {
+                newPc.PsuId = null;
+            }
+            if (Session["Cpu"] != null)
+            {
+                newPc.CpuId = ((CPU)Session["Cpu"]).Id;
+            }
+            else
+            {
+                newPc.CpuId = null;
+            }
+            if (Session["Gpu"] != null)
+            {
+                newPc.GpuId = ((GPU)Session["Gpu"]).Id;
+            }
+            else
+            {
+                newPc.GpuId = null;
+            }
+            if (Session["Case"] != null)
+            {
+                newPc.CaseId = ((Case)Session["Case"]).Id;
+            }
+            else
+            {
+                newPc.CaseId = null;
+            }
+            if (Session["Mb"] != null)
+            {
+                newPc.MotherboardId = ((Motherboard)Session["Mb"]).Id;
+            }
+            else
+            {
+                newPc.MotherboardId = null;
+            }
+            if (Session["Cooling"] != null)
+            {
+                newPc.PsuId = ((Cooling)Session["Cooling"]).Id;
+            }
+            else
+            {
+                newPc.CoolingId = null;
+            }
+            if (Session["Ram"] != null)
+            {
+                newPc.PsuId = ((RAM)Session["Ram"]).Id;
+            }
+            else
+            {
+                newPc.RamId = null;
+            }
+            if (Session["Storage"] != null)
+            {
+                newPc.StorageId = ((Storage)Session["Storage"]).Id;
+            }
+            else
+            {
+                newPc.StorageId = null;
+            }
+
             db.Computers.Add(newPc);
             db.SaveChanges();
 

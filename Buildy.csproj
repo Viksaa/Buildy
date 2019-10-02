@@ -242,6 +242,10 @@
     <Compile Include="Migrations\201910012323109_refactoring.Designer.cs">
       <DependentUpon>201910012323109_refactoring.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201910022145175_Computer nullable fields.cs" />
+    <Compile Include="Migrations\201910022145175_Computer nullable fields.Designer.cs">
+      <DependentUpon>201910022145175_Computer nullable fields.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Address.cs" />
@@ -669,6 +673,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201910012323109_refactoring.resx">
       <DependentUpon>201910012323109_refactoring.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910022145175_Computer nullable fields.resx">
+      <DependentUpon>201910022145175_Computer nullable fields.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
