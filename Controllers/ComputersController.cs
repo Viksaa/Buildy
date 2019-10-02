@@ -19,7 +19,7 @@ namespace Buildy.Controllers
         private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Computers
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
             return View("Create");
         }
