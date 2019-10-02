@@ -7,13 +7,13 @@ namespace Buildy.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Fix : IMigrationMetadata
+    public sealed partial class refactoring : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Fix));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(refactoring));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910022054484_Fix"; }
+            get { return "201910012323109_refactoring"; }
         }
         
         string IMigrationMetadata.Source

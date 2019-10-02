@@ -238,9 +238,9 @@
     <Compile Include="Migrations\201910012321527_refactoring computer.Designer.cs">
       <DependentUpon>201910012321527_refactoring computer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201910022054484_Fix.cs" />
-    <Compile Include="Migrations\201910022054484_Fix.Designer.cs">
-      <DependentUpon>201910022054484_Fix.cs</DependentUpon>
+    <Compile Include="Migrations\201910012323109_refactoring.cs" />
+    <Compile Include="Migrations\201910012323109_refactoring.Designer.cs">
+      <DependentUpon>201910012323109_refactoring.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -667,8 +667,8 @@
     <EmbeddedResource Include="Migrations\201910012321527_refactoring computer.resx">
       <DependentUpon>201910012321527_refactoring computer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910022054484_Fix.resx">
-      <DependentUpon>201910022054484_Fix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201910012323109_refactoring.resx">
+      <DependentUpon>201910012323109_refactoring.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
