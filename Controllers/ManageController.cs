@@ -326,6 +326,28 @@ namespace Buildy.Controllers
             return result.Succeeded ? RedirectToAction("ManageLogins") : RedirectToAction("ManageLogins", new { Message = ManageMessageId.Error });
         }
 
+        public async Task<ActionResult> DeletePcFromSaved(int id)
+        {
+            var dbComputer = await db.Computers.FindAsync(id);
+            var userId = User.Identity.GetUserId();
+            var user = db.Users.Find(userId);
+
+            user.Computers.Remove(dbComputer);
+            await db.SaveChangesAsync();
+
+            var model = new IndexViewModel
+            {
+                HasPassword = HasPassword(),
+                PhoneNumber = await UserManager.GetPhoneNumberAsync(userId),
+                TwoFactor = await UserManager.GetTwoFactorEnabledAsync(userId),
+                Logins = await UserManager.GetLoginsAsync(userId),
+                BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId),
+                Computers = user.Computers
+            };
+
+            return View("Index", model);
+        }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing && _userManager != null)
