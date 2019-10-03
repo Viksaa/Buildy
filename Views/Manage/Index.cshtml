@@ -1,6 +1,7 @@
 ﻿@model Buildy.Models.IndexViewModel
 @{
     ViewBag.Title = "Manage";
+    @Styles.Render("~/")
 }
 
 <h2>@ViewBag.Title.</h2>
@@ -87,18 +88,26 @@
     <hr />
     <h1 class="h2 text-center">Your computers</h1>
     <div class="row">
+        @{
+            if (!Model.Computers.Any())
+            {
+                <div class="col">
+                    You have not saved any computer setup.
+                </div>
+            }
+        }
         @foreach (var item in Model.Computers)
         {
-        <div class="col-md-4">
-            <div class="card bg-dark" style="width: 18rem;">
-                <div class="card-body">
-                    <h4 class="card-title">@item.Name</h4>
-                    <p class="card-text">Edit or view the computer.</p>
-                    @Html.ActionLink("Edit", "GetOursComputer", "Computers", new { id = item.Id }, new { @class = "btn btn-success" })
-                    @Html.ActionLink("Delete", "DeletePcFromSaved", "Manage", new { id = item.Id }, new { @class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this saved computer ?')"  })
+            <div class="col-md-4">
+                <div class="thumbnail" style="width: 18rem;">
+                    <div class="caption">
+                        <h4 class="card-title">@item.Name</h4>
+                        <p class="card-text">Edit, view or delete your computer.</p>
+                        @Html.ActionLink("Edit", "GetOursComputer", "Computers", new {id = item.Id}, new {@class = "btn btn-success"})
+                        @Html.ActionLink("Delete", "DeletePcFromSaved", "Manage", new {id = item.Id}, new {@class = "btn btn-danger", confirm = true, onclick = "return confirm('Are you sure you want to delete this saved computer ?')"})
+                    </div>
                 </div>
             </div>
-        </div>
         }
     </div>
    
