@@ -144,14 +144,6 @@ namespace Buildy.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
-        public ActionResult Buy()
-        {
-            return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Reset ()
         {
             Session.Clear();
